@@ -6,7 +6,7 @@
     </title>
     <link rel="stylesheet" type="text/css" href="/style"/>
   </head>
-  <body>
+  <body class="page-<%= @page_id %>" data-page-id="<%= @page_id %>">
     <h1>旅のお供</h1>
     <%== yield %>
     <script type="text/javascript" src="/js/vendor/jquery/dist/jquery.min.js"></script>

@@ -1,0 +1,17 @@
+development:
+  sessions:
+    default:
+      hosts:
+        - localhost
+      database: tabi_development
+      options:
+        timeout: 3
+        max_retries: 5
+
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOLAB_URI'] %>
+      options:
+        timeout: 3
+        max_retries: 5

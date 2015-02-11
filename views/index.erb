@@ -1,3 +1,14 @@
 <p>
-  いらっしゃい
+  旅の名前を入れて，しおりを作ってみよう
 </p>
+
+
+<form action="/tabi/create" method="post">
+  <div>
+    <input name="title" type="text" placeholder="例：東京スカイツリーの旅" required />
+  </div>
+  <div>
+    <input type="submit" value="しおりを作成する！"/>
+  </div>
+  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+</form>
