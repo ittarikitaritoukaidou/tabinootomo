@@ -1,14 +1,23 @@
-<p>
-  旅の名前を入れて，しおりを作ってみよう
-</p>
-
-
-<form action="/tabi/create" method="post">
-  <div>
-    <input name="title" type="text" placeholder="例：東京スカイツリーの旅" required />
+<div class="container">
+  <p class="description">
+    旅の名前を入れて，<br>しおりを作ってみよう
+  </p>
+  <form action="/tabi/create" method="post" class="register-form">
+    <div>
+      <input name="title" type="text" placeholder="例：スカイツリーが見たい！" class="register-placeholder" required />
+    </div>
+    <div>
+      <input type="submit" value="しおりを作成する！" class="primary-btn index-primary-btn"/>
+    </div>
+    <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+  </form>
+  <div class="about">
+    <h2 class="about-title">旅のお供ってなあに？</h2>
+    <p>「旅のお供」は5秒で旅のしおりを作成して<br>
+    家族や友達と共有できるサービスです。</p>
+    <p>「行きたいところ」を入れるだけで<br>
+    しおりを作成することができます。</p>
+    <p>できたしおりはみんなで編集できるよ！<br>
+    いますぐあなただけのしおりを作ろう！</p>
   </div>
-  <div>
-    <input type="submit" value="しおりを作成する！"/>
-  </div>
-  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
-</form>
+</div>

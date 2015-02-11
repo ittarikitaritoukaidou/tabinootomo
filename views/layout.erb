@@ -1,15 +1,22 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>
       旅のお供
     </title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/style"/>
+
   </head>
   <body class="page-<%= @page_id %>" data-page-id="<%= @page_id %>">
-    <h1>旅のお供</h1>
+    <header>
+      <h1 class="title"><a href="/">旅のお供</a></h1>
+    </header>
     <%== yield %>
+    <footer>
+      <small>©行ったり来たり東海道</small>
+    </footer>
     <script type="text/javascript" src="/js/vendor/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/js/vendor/underscore/underscore-min.js"></script>
     <script type="text/javascript" src="/js"></script>

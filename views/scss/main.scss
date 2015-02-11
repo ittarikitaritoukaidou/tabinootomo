@@ -1,13 +1,87 @@
 @import "compass";
+@import "normalize";
 
-$bg_color: #ddd;
+$bg_color: #fff;
+$primary: #ffa161;
+$text: #666666;
+$border: #ddd;
 
+
+// common
 body {
   background: $bg_color;
+  font-size: 16px;
+  color: $text;
+  line-height: 1.2;
 }
 
-p{
-    @include inline-block;
-    @include box-shadow( 0 0 10px #a82f34);
-    @include opacity(.5);
+p {
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+.primary-btn {
+  background: $primary;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 120%;
+  padding: 6px 15px;
+  @include border-radius (3);
+}
+
+
+// header
+header {
+  border-top: 5px solid $primary;
+  border-bottom: 1px solid $border;
+  padding: 0 10px;
+}
+.title {
+  margin: 8px 0;
+  font-size: 150%;
+  a {
+    text-decoration: none;
+    color: $text;
+  }
+}
+
+// index page
+
+
+
+.description {
+  text-align: center;
+}
+.register-form {
+  width: 250px;
+  margin: 0 auto;
+}
+.register-placeholder {
+  width: 100%;
+  border: 1px solid $border;
+  padding: 2px 8px;
+  font-size: 110%;
+  @include border-radius(3);
+}
+.index-primary-btn {
+  margin: 10px 0 0 0;
+  width: 100%;
+}
+.about {
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+.about-title {
+  font-size: 110%;
+}
+
+
+// footer
+footer {
+  margin: 30px 0;
+  text-align: center;
 }
