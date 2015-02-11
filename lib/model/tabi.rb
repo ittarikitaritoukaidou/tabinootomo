@@ -9,4 +9,8 @@ class Tabi
   def path
     "/tabi/#{ id }"
   end
+
+  def edit_path
+    "/tabi/#{ id }/edit"
+  end
 end

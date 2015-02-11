@@ -1,0 +1,9 @@
+<form action="<%= to(@tabi.edit_path) %>" method="post">
+  <div>
+    <input name="title" type="text" placeholder="例：東京スカイツリーの旅" required value="<%= @tabi.title %>" />
+  </div>
+  <div>
+    <input type="submit" value="保存"/>
+  </div>
+  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+</form>

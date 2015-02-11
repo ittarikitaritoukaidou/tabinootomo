@@ -10,8 +10,19 @@ class OtomoApp < Sinatra::Base
     set :scss, {:style => :compact, :debug_info => false}
   end
 
-  def csrf_token
-    session[ :csrf ] ||= SecureRandom.hex( 32 )
+  helpers do
+    def csrf_token
+      session[ :csrf ] ||= SecureRandom.hex( 32 )
+    end
+
+    def require_tabi
+      begin
+        @tabi = Tabi.find(params[:tabi_id])
+      rescue
+        redirect to '/'
+      end
+    end
+
   end
 
   get '/' do
@@ -30,13 +41,26 @@ class OtomoApp < Sinatra::Base
 
   get '/tabi/:tabi_id' do
     @page_id = 'tabi'
-    begin
-      @tabi = Tabi.find(params[:tabi_id])
-    rescue
-      redirect to '/'
-    end
+    require_tabi
 
     erb :tabi
+  end
+
+  get '/tabi/:tabi_id/edit' do
+    @page_id = 'tabi'
+    require_tabi
+
+    erb :tabi_edit
+  end
+
+  post '/tabi/:tabi_id/edit' do
+    @page_id = 'tabi_edit'
+    require_tabi
+
+    @tabi.title = params[:title]
+    @tabi.save
+
+    redirect to @tabi.path
   end
 
 
