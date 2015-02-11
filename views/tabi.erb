@@ -1,3 +1,11 @@
 <h1><%= @tabi.title %></h1>
 
 <a href="<%= @tabi.edit_path %>">編集</a>
+
+
+<div>
+  <label>
+    このURLを友達に送ろう
+    <input readonly value="<%= to @tabi.path %>" onclick="select()"/>
+  </label>
+</div>
