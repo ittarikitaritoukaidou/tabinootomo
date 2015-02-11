@@ -1,9 +1,11 @@
 $:.unshift(File.join(File.dirname(__FILE__), 'lib'))
 require 'model/tabi'
+require 'model/activity'
 
 Mongoid.load!('mongoid.yaml')
 
 class OtomoApp < Sinatra::Base
+  helpers Sinatra::JSON
 
   configure do
     set :erb, :escape_html => true
@@ -63,6 +65,12 @@ class OtomoApp < Sinatra::Base
     redirect to @tabi.path
   end
 
+  post '/tabi/:tabi_id/activities' do
+    require_tabi
+    activity = @tabi.append_activity params[:title]
+
+    redirect to @tabi.path
+  end
 
   get '/style' do
     scss :'scss/main', Compass.sass_engine_options

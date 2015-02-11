@@ -3,6 +3,19 @@
 <a href="<%= @tabi.edit_path %>">編集</a>
 <i class="fa fa-pencil"></i>
 
+<ul>
+  <% @tabi.activities.each{|activity| %>
+    <li data-activity-id="<%= activity.id %>"><%= activity.title %></li>
+  <% } %>
+</ul>
+
+
+<form method="POST" action="<%= @tabi.append_activity_path %>" class="js-append-new-activity-form">
+  <input name="title" type="text" placeholder="例：水族館" required />
+  <input type="submit" value="追加"/>
+  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+</form>
+
 <div>
   <label>
     このURLを友達に送ろう
