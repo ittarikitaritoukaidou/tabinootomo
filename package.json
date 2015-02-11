@@ -1,0 +1,10 @@
+{
+  "name": "tabi",
+  "version": "0.1.0",
+  "description": "",
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "bower": "*"
+  }
+}

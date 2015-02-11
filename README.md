@@ -10,6 +10,8 @@ rbenv local
 gem install bundler
 rbenv rehash
 bundle install
+npm install
+./node_modules/bower/bin/bower install
 ```
 
 ## 起動
