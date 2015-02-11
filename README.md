@@ -20,3 +20,4 @@ npm install
 ./run.sh
 ```
 
+localhost:8000に起動するはず
