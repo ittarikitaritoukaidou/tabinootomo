@@ -60,6 +60,16 @@ class OtomoApp < Sinatra::Base
     require_tabi
 
     @tabi.title = params[:title]
+
+    activity_ids = @tabi.activity_ids
+
+    @tabi.activity_ids = params[:activity_id].map{|_id|
+      _id = BSON::ObjectId.from_string(_id)
+      activity_ids.find{|__id|
+        __id == _id
+      }
+    }.compact
+
     @tabi.save
 
     redirect to @tabi.path
