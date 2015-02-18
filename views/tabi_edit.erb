@@ -2,10 +2,10 @@
   <div>
     <input name="title" type="text" placeholder="例：東京スカイツリーの旅" required value="<%= @tabi.title %>" />
   </div>
-
-  <ul>
+  <ul class="sortable js-sortable">
     <% @tabi.activities.each{|activity| %>
       <li data-activity-id="<%= activity.id %>">
+        <i class="fa fa-bars handle js-handle"></i>
         <%= activity.title %>
         <input type="hidden" name="activity_id[]" value="<%= activity.id %>"/>
       </li>

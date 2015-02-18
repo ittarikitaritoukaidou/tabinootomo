@@ -49,7 +49,7 @@ class OtomoApp < Sinatra::Base
   end
 
   get '/tabi/:tabi_id/edit' do
-    @page_id = 'tabi'
+    @page_id = 'tabi_edit'
     require_tabi
 
     erb :tabi_edit
