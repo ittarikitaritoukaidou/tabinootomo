@@ -2,7 +2,7 @@
   <p class="description">
     旅の名前を入れて，<br>しおりを作ってみよう
   </p>
-  <form action="/tabi/create" method="post" class="register-form">
+  <form action="/tabi/create" method="post" class="register-form base-width">
     <div>
       <input name="title" type="text" placeholder="例：スカイツリーが見たい！" class="register-placeholder" required />
     </div>
@@ -12,7 +12,7 @@
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
   </form>
   <div class="about">
-    <h2 class="about-title">旅のお供ってなあに？</h2>
+    <h3 class="about-title">旅のお供ってなあに？</h2>
     <p>「旅のお供」は5秒で旅のしおりを作成して<br>
     家族や友達と共有できるサービスです。</p>
     <p>「行きたいところ」を入れるだけで<br>

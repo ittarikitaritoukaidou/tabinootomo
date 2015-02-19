@@ -14,12 +14,20 @@ body {
   color: $text;
   line-height: 1.2;
 }
-
 p {
+}
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   width: 95%;
+  margin: 0 auto;
+}
+.base-width {
+  width: 280px;
   margin: 0 auto;
 }
 .primary-btn {
@@ -36,9 +44,9 @@ p {
 
 // header
 header {
-  border-top: 5px solid $primary;
   border-bottom: 1px solid $border;
   padding: 0 10px;
+  text-align: center;
 }
 .title {
   margin: 8px 0;
@@ -50,14 +58,10 @@ header {
 }
 
 // index page
-
-
-
 .description {
   text-align: center;
 }
 .register-form {
-  width: 250px;
   margin: 0 auto;
 }
 .register-placeholder {
@@ -77,6 +81,23 @@ header {
 }
 .about-title {
   font-size: 110%;
+}
+
+// tabi
+.tabi-title {
+  font-size: 150%;
+  text-align: center;
+}
+.activity-list {
+  width: 280px;
+  margin: 0 auto;
+  li {
+    display: block;
+    border-bottom: 3px solid #ffa161;
+    padding: 2px 4px;
+    margin: 0 0 8px 0;
+    font-size: 120%;
+  }
 }
 
 
