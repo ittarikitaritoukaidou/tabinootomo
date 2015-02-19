@@ -106,3 +106,21 @@ footer {
   margin: 30px 0;
   text-align: center;
 }
+
+// edit page
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.sortable {
+    .handle {
+        cursor: move;
+    }
+
+    .dragged {
+        position: absolute;
+        opacity: 0.5;
+        z-index: 2000;
+    }
+}
