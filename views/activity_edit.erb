@@ -1,25 +1,26 @@
-<form action="<%= to(@activity.edit_path) %>" method="post">
+<form id="activity_edit_form" action="<%= to(@activity.edit_path) %>" method="post">
   <div>
     <input name="title" type="text" placeholder="例：水族館" required value="<%= @activity.title %>" />
   </div>
 
   <h3>メモ</h3>
   <textarea name="memo" placeholder="エイヒレの本体を見れます"><%= @activity.memo %></textarea>
-
-  <h3>場所</h3>
-  <div>
-    <input type="text" name="address">
-  </div>
-  <div class="preview">
-    <img src="http://i.gyazo.com/7359faa8d4c10d5bcbc465396b1d51fe.png" width="120px"/>
-  </div>
-
-  <div>
-    <input type="submit" value="保存"/>
-  </div>
   <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
 </form>
 
+
+<h3>場所</h3>
+<div>
+  <input type="text" name="address" class="js-address-input">
+</div>
+
+<div class="preview js-map-container">
+  <div class="js-map" style="width: 200px; height: 200px;"></div>
+</div>
+
+<div>
+  <input type="submit" value="保存" form="activity_edit_form">
+</div>
 
 <form method="POST" action="<%= @activity.delete_path %>" onsubmit="return confirm('この行き先を削除しますか？\n一度削除した行き先は取り消せません')">
   <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />

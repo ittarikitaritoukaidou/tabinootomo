@@ -125,6 +125,7 @@ class OtomoApp < Sinatra::Base
   end
 
   get '/tabi/:tabi_id/activities/:activity_id' do
+    @page_id = 'activity'
     require_tabi
     require_activity
 
@@ -132,6 +133,7 @@ class OtomoApp < Sinatra::Base
   end
 
   get '/tabi/:tabi_id/activities/:activity_id/edit' do
+    @page_id = 'activity_edit'
     require_tabi
     require_activity
 
