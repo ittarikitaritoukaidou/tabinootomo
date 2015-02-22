@@ -146,6 +146,7 @@ class OtomoApp < Sinatra::Base
 
     @activity.title = params[:title]
     @activity.memo = params[:memo]
+    @activity.location = params[:location]
 
     @activity.save
 

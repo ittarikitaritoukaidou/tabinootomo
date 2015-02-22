@@ -5,13 +5,19 @@
 
   <h3>メモ</h3>
   <textarea name="memo" placeholder="エイヒレの本体を見れます"><%= @activity.memo %></textarea>
+  <input type="hidden" name="location" value="<%= @activity.location %>" class="js-location-input" />
   <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
 </form>
-
+<% # コメント %>
 
 <h3>場所</h3>
 <div>
-  <input type="text" name="address" class="js-address-input">
+<form class="js-search-form">
+  <label>
+    検索
+  <input type="search" name="address" class="js-address-input">
+  </label>
+</form>
 </div>
 
 <div class="preview js-map-container">

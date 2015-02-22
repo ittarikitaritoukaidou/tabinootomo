@@ -5,12 +5,12 @@ class Activity
   field :tabi_id, type: BSON::ObjectId
 
   field :title, type: String
-
   field :memo, type: String
+  field :location, type: String
 
   validates :title, length: {maximum: 256, allow_blank: false}
-
   validates :memo, length: {maximum: 256000, allow_blank: true}
+  validates :location, length: {maximum: 64, allow_blank: true}
 
   def path
     "/tabi/#{ tabi_id }/activities/#{ id }"

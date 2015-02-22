@@ -5,6 +5,11 @@
 <p class="memo"><%== rich_text(@activity.memo) %></p>
 <%- end -%>
 
+<%- if @activity.location -%>
+<h3>地図</h3>
+<div class="js-map" data-location="<%= @activity.location %>" style="width: 200px; height: 200px"></div>
+<%- end -%>
+
 <a href="<%= @activity.edit_path %>">編集</a>
 
 <%- unless @activity.has_any_detail? -%>
