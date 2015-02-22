@@ -95,7 +95,7 @@ class OtomoApp < Sinatra::Base
     require_tabi
     require_activity
 
-    @tabi.title + ' > ' + @activity.title
+    erb :activity
   end
 
   get '/style' do
