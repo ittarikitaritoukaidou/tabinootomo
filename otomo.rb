@@ -25,6 +25,7 @@ class OtomoApp < Sinatra::Base
     def require_tabi
       begin
         @tabi = Tabi.find(params[:tabi_id])
+        @title = @tabi.title
       rescue
         redirect to '/'
       end
@@ -46,6 +47,7 @@ class OtomoApp < Sinatra::Base
       begin
         @activity = Activity.find(params[:activity_id])
         raise "not match" unless @tabi.has_activity?(@activity)
+        @title = @activity.title
       rescue
         redirect to '/'
       end
