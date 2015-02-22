@@ -7,9 +7,16 @@
       </li>
     <% } %>
   </ul>
+
+  <% # まだリストになにも追加してないときこれ出したい %>
+  <div class="activity-list-empty">
+    <p>この旅で行きたい場所を追加してみよう！</p>
+  </div>
+  <% # まだリストになにも追加してないときこれ出したい %>
+
   <form method="POST" action="<%= @tabi.append_activity_path %>" class="js-append-new-activity-form add-activity">
     <input name="title" type="text" placeholder="例：水族館" required class="add-activity-input" />
-    <input type="submit" value="追加" class="add-activity-btn"/>
+    <input type="submit" value="追加" class="add-activity-btn primary-btn"/>
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
   </form>
 </div>

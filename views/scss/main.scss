@@ -41,8 +41,6 @@ input {
   font-weight: bold;
   border: none;
   cursor: pointer;
-  font-size: 120%;
-  padding: 6px 15px;
   border-bottom: 3px solid darken($primary, 5%);
   @include border-radius (3);
 }
@@ -95,9 +93,11 @@ header {
   font-size: 120%;
   @include border-radius(3);
 }
-.index-primary-btn {
+.primary-btn-index {
   margin: 10px 0 0 0;
   width: 100%;
+  font-size: 120%;
+  padding: 6px 15px;
 }
 .about {
   text-align: center;
@@ -135,18 +135,28 @@ header {
   color: $list-link;
   background: url("/images/arrow-right.svg") no-repeat right center;
 }
+.activity-list-empty {
+  padding: 15px 0 0 0;
+  text-align: center;
+  font-size: 80%;
+  p {
+    margin: 0;
+  }
+}
 .add-activity {
   margin: 10px 0 0 0;
 }
 .add-activity-input {
   width: 80%;
   border: 2px solid $border;
-  padding: 2px 4px;
+  padding: 6px 4px;
+  @include border-radius(3);
 }
 .add-activity-btn {
   cursor: pointer;
   float: right;
   width: 18%;
+  padding: 6px 0;
 }
 .share {
   text-align: center;
