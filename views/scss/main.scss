@@ -4,8 +4,10 @@
 $bg_color: #fff;
 $primary: #ffa466 ;
 $text: #666666;
-$border: #ddd;
-$bg: #f4ebe6;
+$border: #efe3df;
+$header-bg: #f4ebe6;
+$main-bg: #f9f4f2;
+$list-link: #666;
 
 
 
@@ -17,21 +19,18 @@ body {
   line-height: 1.2;
   word-break: break-all;
 }
-p {
-}
 ul, li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
+a {
+  text-decoration: none;
+}
 .container {
   max-width: 400px;
   margin: 0 auto;
   padding: 0 5%;
-}
-.base-width {
-  margin: 0 auto;
 }
 .primary-btn {
   background: $primary;
@@ -44,12 +43,18 @@ ul, li {
   border-bottom: 3px solid darken($primary, 5%);
   @include border-radius (3);
 }
+.main-box {
+  background: $main-bg;
+  margin: 0 auto;
+  padding: 15px;
+  @include border-radius (3);
+}
 
 
 // header
 header {
   padding: 0 10px;
-  background: $bg;
+  background: $header-bg;
 }
 .title {
   margin: 0;
@@ -79,11 +84,11 @@ header {
   text-align: center;
 }
 .register-form {
-  margin: 0 auto;
+
 }
 .register-placeholder {
   width: 100%;
-  border: 1px solid $border;
+  border: 3px solid $border;
   padding: 2px 8px;
   font-size: 110%;
   @include border-radius(3);
@@ -101,8 +106,13 @@ header {
 }
 
 // tabi
+.page-tabi {
+  .main-box {
+    padding: 0 15px 15px 15px;
+  }
+}
 .tabi-title {
-  font-size: 150%;
+  font-size: 130%;
   margin: .5em 0;
   text-align: center;
 }
@@ -114,14 +124,22 @@ header {
   margin: 0 auto;
   li {
     display: block;
-    // border-bottom: 3px solid #ffa161;
-    padding: 2px 4px;
-    margin: 0 0 8px 0;
-    font-size: 120%;
+    border-bottom: 2px solid $border;
   }
 }
-.add-activity-form {
+.activity-list-link {
+  display: block;
+  padding: 12px 2px;
+  color: $list-link;
+  background: url("/images/arrow-right.svg") no-repeat right center;
+}
+.add-activity {
+  margin: 10px 0 0 0;
+}
+.add-activity-input {
   width: 80%;
+  border: 2px solid $border;
+  padding: 2px 4px;
 }
 .add-activity-btn {
   cursor: pointer;

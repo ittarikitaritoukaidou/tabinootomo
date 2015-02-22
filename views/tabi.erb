@@ -1,15 +1,17 @@
 <h2 class="tabi-title"><%= @tabi.title %></h2>
-<div class="activity base-width">
-<ul class="activity-list">
-  <% @tabi.activities.each{|activity| %>
-    <li data-activity-id="<%= activity.id %>"><a href="<%= @tabi.activity_path(activity) %>"><%= activity.title %></a></li>
-  <% } %>
-</ul>
-<form method="POST" action="<%= @tabi.append_activity_path %>" class="js-append-new-activity-form">
-  <input name="title" type="text" placeholder="例：水族館" required class="add-activity-form" />
-  <input type="submit" value="追加" class="add-activity-btn"/>
-  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
-</form>
+<div class="main-box">
+  <ul class="activity-list">
+    <% @tabi.activities.each{|activity| %>
+      <li data-activity-id="<%= activity.id %>">
+        <a href="<%= @tabi.activity_path(activity) %>" class="activity-list-link"><%= activity.title %></a>
+      </li>
+    <% } %>
+  </ul>
+  <form method="POST" action="<%= @tabi.append_activity_path %>" class="js-append-new-activity-form add-activity">
+    <input name="title" type="text" placeholder="例：水族館" required class="add-activity-input" />
+    <input type="submit" value="追加" class="add-activity-btn"/>
+    <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+  </form>
 </div>
 <div class="edit-btn">
   <a href="<%= @tabi.edit_path %>">この旅を編集する</a>
