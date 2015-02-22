@@ -29,6 +29,10 @@ class OtomoApp < Sinatra::Base
       end
     end
 
+    def line_break(text)
+      Rack::Utils.escape_html(text).gsub("\n", '<br>')
+    end
+
     def require_activity
       begin
         @activity = Activity.find(params[:activity_id])
@@ -114,6 +118,25 @@ class OtomoApp < Sinatra::Base
     require_activity
 
     erb :activity
+  end
+
+  get '/tabi/:tabi_id/activities/:activity_id/edit' do
+    require_tabi
+    require_activity
+
+    erb :activity_edit
+  end
+
+  post '/tabi/:tabi_id/activities/:activity_id/edit' do
+    require_tabi
+    require_activity
+
+    @activity.title = params[:title]
+    @activity.memo = params[:memo]
+
+    @activity.save
+
+    redirect to @activity.path
   end
 
   post '/tabi/:tabi_id/activities/:activity_id/delete' do

@@ -6,7 +6,11 @@ class Activity
 
   field :title, type: String
 
+  field :memo, type: String
+
   validates :title, length: {maximum: 256, allow_blank: false}
+
+  validates :memo, length: {maximum: 256000, allow_blank: true}
 
   def path
     "/tabi/#{ tabi_id }/activities/#{ id }"
