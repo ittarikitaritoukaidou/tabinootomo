@@ -2,7 +2,7 @@
 @import "normalize";
 
 $bg_color: #fff;
-$primary: #ffa161;
+$primary: #ffa466;
 $text: #666666;
 $border: #ddd;
 $bg: #f4ebe6;
@@ -39,6 +39,7 @@ ul, li {
   cursor: pointer;
   font-size: 120%;
   padding: 6px 15px;
+  border-bottom: 3px solid darken($primary, 5%);
   @include border-radius (3);
 }
 
