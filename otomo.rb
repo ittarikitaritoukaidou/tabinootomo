@@ -7,6 +7,10 @@ Mongoid.load!('mongoid.yaml')
 class OtomoApp < Sinatra::Base
   helpers Sinatra::JSON
 
+  configure :development do
+    register Sinatra::Reloader
+  end
+
   configure do
     set :erb, :escape_html => true
     set :scss, {:style => :compact, :debug_info => false}
