@@ -27,6 +27,9 @@ ul, li {
 a {
   text-decoration: none;
 }
+input {
+  -webkit-appearance: none;
+}
 .container {
   max-width: 400px;
   margin: 0 auto;
@@ -84,13 +87,12 @@ header {
   text-align: center;
 }
 .register-form {
-  -webkit-appearance: none;
 }
 .register-placeholder {
   width: 100%;
   border: 3px solid $border;
-  padding: 2px 8px;
-  font-size: 110%;
+  padding: 6px 4px;
+  font-size: 120%;
   @include border-radius(3);
 }
 .index-primary-btn {
