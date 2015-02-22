@@ -7,7 +7,7 @@
 
 <%- if @activity.location -%>
 <h3>地図</h3>
-<div class="js-map" data-location="<%= @activity.location %>" style="width: 200px; height: 200px"></div>
+<div class="js-map" data-location="<%= @activity.location %>" style="width: 100%; height: 230px"></div>
 <%- end -%>
 
 <a href="<%= @activity.edit_path %>">編集</a>
