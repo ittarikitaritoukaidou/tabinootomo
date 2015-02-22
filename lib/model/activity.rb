@@ -9,11 +9,19 @@ class Activity
   validates :title, length: {maximum: 256, allow_blank: false}
 
   def path
-    "/tabi/#{ tabi_id }/activity/#{ id }"
+    "/tabi/#{ tabi_id }/activities/#{ id }"
   end
 
-  def path
-    "/tabi/#{ tabi_id }/activity/#{ id }/edit"
+  def edit_path
+    "/tabi/#{ tabi_id }/activities/#{ id }/edit"
+  end
+
+  def delete_path
+    "/tabi/#{ tabi_id }/activities/#{ id }/delete"
+  end
+
+  def has_any_detail?
+    false
   end
 
   def tabi

@@ -11,6 +11,10 @@ class Tabi
     "/tabi/#{ id }"
   end
 
+  def activity_path(activity)
+    "/tabi/#{ id }/activities/#{ activity.id }"
+  end
+
   def edit_path
     "/tabi/#{ id }/edit"
   end
@@ -38,6 +42,10 @@ class Tabi
     activity_ids << a.id
     save
     a
+  end
+
+  def has_activity?(activity)
+    activity_ids.include? activity.id
   end
 
 end
