@@ -14,7 +14,7 @@ Tabi =
     mapFromCenter: ($map, center) ->
       options =
         center: center
-        zoom: 4
+        zoom: 14
       map = new google.maps.Map($map[0], options)
 
       marker = new google.maps.Marker(
@@ -71,7 +71,7 @@ Tabi =
           map.fitBounds geometry.viewport
         else
           map.setCenter geometry.location
-          map.setZoom 15
+          map.setZoom 14
 
         $('.js-location-input').val(geometry.location.toUrlValue())
 
