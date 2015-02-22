@@ -11,3 +11,9 @@
   </div>
   <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
 </form>
+
+
+<form method="POST" action="<%= @activity.delete_path %>" onsubmit="return confirm('この行き先を削除しますか？\n一度削除した行き先は取り消せません')">
+  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+  <input type="submit" value="この行き先を削除する">
+</button>

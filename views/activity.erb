@@ -10,8 +10,3 @@
 <%- unless @activity.has_any_detail? -%>
   <p>編集して，この行き先に説明や場所を追加すると便利です．</p>
 <%- end -%>
-
-<form method="POST" action="<%= @activity.delete_path %>" onsubmit="return confirm('この行き先を削除しますか？\n一度削除した行き先は取り消せません')">
-  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
-  <input type="submit" value="この行き先を削除する">
-</button>
