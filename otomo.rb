@@ -9,6 +9,7 @@ class OtomoApp < Sinatra::Base
 
   configure :development do
     register Sinatra::Reloader
+    also_reload 'lib/*.rb'
   end
 
   configure do
