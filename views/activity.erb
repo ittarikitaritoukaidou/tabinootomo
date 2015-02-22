@@ -1,6 +1,10 @@
 <h2 class="tabi-title"><%= @tabi.title %>→<%= @activity.title %></h2>
 <a href="<%= @tabi.path %>">もどる</a>
 
+<%- if @activity.memo -%>
+<p class="memo"><%== line_break(@activity.memo) %></p>
+<%- end -%>
+
 <a href="<%= @activity.edit_path %>">編集</a>
 
 <%- unless @activity.has_any_detail? -%>

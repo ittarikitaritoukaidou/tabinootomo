@@ -1,0 +1,13 @@
+<form action="<%= to(@activity.edit_path) %>" method="post">
+  <div>
+    <input name="title" type="text" placeholder="例：水族館" required value="<%= @activity.title %>" />
+  </div>
+
+  <h3>メモ</h3>
+  <textarea name="memo" placeholder="エイヒレの本体を見れます"><%= @activity.memo %></textarea>
+
+  <div>
+    <input type="submit" value="保存"/>
+  </div>
+  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+</form>

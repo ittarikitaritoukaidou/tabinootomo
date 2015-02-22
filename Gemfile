@@ -2,7 +2,7 @@ source "https://rubygems.org"
 ruby "2.2.0"
 
 gem 'sinatra'
-gem 'sinatra-contrib', require: 'sinatra/json'
+gem 'sinatra-contrib', require: ['sinatra/json', 'sinatra/reloader']
 gem 'coffee-script'
 gem 'compass'
 gem 'erubis'
