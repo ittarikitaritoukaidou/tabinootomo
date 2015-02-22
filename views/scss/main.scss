@@ -5,6 +5,7 @@ $bg_color: #fff;
 $primary: #ffa161;
 $text: #666666;
 $border: #ddd;
+$bg: #f4ebe6;
 
 
 // common
@@ -44,19 +45,33 @@ ul, li {
 
 // header
 header {
-  border-bottom: 1px solid $border;
-  text-align: center;
+  padding: 0 10px;
+  background: $bg;
 }
 .title {
-  margin: 8px 0;
+  margin: 0;
+  padding: 8px 0;
   font-size: 150%;
   a {
     text-decoration: none;
     color: $text;
   }
+  img {
+    width: 100px;
+    height: 24px;
+  }
 }
 
 // index page
+.page-index {
+  header {
+    text-align: center;
+  }
+  .title img {
+    width: 150px;
+    height: 36px;
+  }
+}
 .description {
   text-align: center;
 }
