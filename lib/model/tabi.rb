@@ -44,6 +44,13 @@ class Tabi
     a
   end
 
+  def delete_activity(activity)
+    raise "this activity doesn't belongs me " unless has_activity?(activity)
+    raise unless "failed to delete activity" unless activity_ids.delete(activity.id)
+    activity.destroy
+    save
+  end
+
   def has_activity?(activity)
     activity_ids.include? activity.id
   end

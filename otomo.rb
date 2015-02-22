@@ -98,6 +98,17 @@ class OtomoApp < Sinatra::Base
     erb :activity
   end
 
+  post '/tabi/:tabi_id/activities/:activity_id/delete' do
+    require_tabi
+    require_activity
+
+    @tabi.delete_activity(@activity)
+
+    redirect to @tabi.path
+  end
+
+  # -----
+
   get '/style' do
     scss :'scss/main', Compass.sass_engine_options
   end
