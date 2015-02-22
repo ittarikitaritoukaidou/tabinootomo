@@ -25,6 +25,15 @@ class OtomoApp < Sinatra::Base
       end
     end
 
+    def require_activity
+      begin
+        @activity = Activity.find(params[:activity_id])
+        raise "not match" unless @tabi.has_activity?(@activity)
+      rescue
+        redirect to '/'
+      end
+    end
+
   end
 
   get '/' do
@@ -80,6 +89,13 @@ class OtomoApp < Sinatra::Base
     activity = @tabi.append_activity params[:title]
 
     redirect to @tabi.path
+  end
+
+  get '/tabi/:tabi_id/activities/:activity_id' do
+    require_tabi
+    require_activity
+
+    @tabi.title + ' > ' + @activity.title
   end
 
   get '/style' do

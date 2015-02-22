@@ -6,7 +6,7 @@
 <div class="activity base-width">
 <ul class="activity-list">
   <% @tabi.activities.each{|activity| %>
-    <li data-activity-id="<%= activity.id %>"><%= activity.title %></li>
+    <li data-activity-id="<%= activity.id %>"><a href="<%= @tabi.activity_path(activity) %>"><%= activity.title %></a></li>
   <% } %>
 </ul>
 <form method="POST" action="<%= @tabi.append_activity_path %>" class="js-append-new-activity-form">
