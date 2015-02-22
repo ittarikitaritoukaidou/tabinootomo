@@ -43,7 +43,6 @@ Tabi =
     activity_edit: ->
       $map = $('.js-map')
 
-      console.log Tabi.Map.latLngFromString($('.js-location-input').val())
       center = Tabi.Map.latLngFromString($('.js-location-input').val())
       unless center
         $map.hide()
@@ -93,4 +92,3 @@ Tabi =
         set_geometry place.geometry
 $ ->
   Tabi.doHandler()
-  console.log '旅'
