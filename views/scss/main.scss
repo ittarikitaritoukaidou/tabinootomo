@@ -45,7 +45,6 @@ ul, li {
 // header
 header {
   border-bottom: 1px solid $border;
-  padding: 0 10px;
   text-align: center;
 }
 .title {
@@ -97,7 +96,7 @@ header {
   margin: 0 auto;
   li {
     display: block;
-    border-bottom: 3px solid #ffa161;
+    // border-bottom: 3px solid #ffa161;
     padding: 2px 4px;
     margin: 0 0 8px 0;
     font-size: 120%;
