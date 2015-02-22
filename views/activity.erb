@@ -2,7 +2,7 @@
 <a href="<%= @tabi.path %>">もどる</a>
 
 <%- if @activity.memo -%>
-<p class="memo"><%== line_break(@activity.memo) %></p>
+<p class="memo"><%== rich_text(@activity.memo) %></p>
 <%- end -%>
 
 <a href="<%= @activity.edit_path %>">編集</a>

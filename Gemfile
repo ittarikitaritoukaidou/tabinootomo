@@ -21,3 +21,6 @@ end
 gem 'newrelic_rpm'
 
 gem 'nokogiri'
+
+gem 'rinku'
+gem 'sanitize'

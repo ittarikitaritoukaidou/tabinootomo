@@ -30,8 +30,16 @@ class OtomoApp < Sinatra::Base
       end
     end
 
-    def line_break(text)
-      Rack::Utils.escape_html(text).gsub("\n", '<br>')
+    def rich_text(text)
+      breaked_line = text.gsub("\n", '<br>')
+      linked = Rinku.auto_link(breaked_line, :urls, 'target="_blank" rel="nofollow"', skip_tags=nil)
+      Sanitize.fragment(linked, Sanitize::Config.merge(Sanitize::Config::BASIC,
+          :add_attributes => {
+            'a' => {
+              'target' => '_blank',
+              }
+            }
+      ))
     end
 
     def require_activity
