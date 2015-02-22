@@ -87,6 +87,17 @@ class OtomoApp < Sinatra::Base
     redirect to @tabi.path
   end
 
+  post '/tabi/:tabi_id/delete' do
+    require_tabi
+
+    @tabi.activities.each{|activity|
+      activity.destroy
+    }
+    @tabi.destroy
+
+    redirect to '/'
+  end
+
   post '/tabi/:tabi_id/activities' do
     require_tabi
     activity = @tabi.append_activity params[:title]

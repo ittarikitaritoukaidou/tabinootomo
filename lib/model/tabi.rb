@@ -23,6 +23,10 @@ class Tabi
     "/tabi/#{ id }/activities"
   end
 
+  def delete_path
+    "/tabi/#{ id }/delete"
+  end
+
   def activities
     ids = { }
     Activity.in(_id: activity_ids).each{|a|
@@ -46,7 +50,7 @@ class Tabi
 
   def delete_activity(activity)
     raise "this activity doesn't belongs me " unless has_activity?(activity)
-    raise unless "failed to delete activity" unless activity_ids.delete(activity.id)
+    raise "failed to delete activity" unless activity_ids.delete(activity.id)
     activity.destroy
     save
   end

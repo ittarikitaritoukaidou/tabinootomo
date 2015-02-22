@@ -17,3 +17,8 @@
   </div>
   <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
 </form>
+
+<form method="POST" action="<%= @tabi.delete_path %>" onsubmit="return confirm('この旅を削除しますか？\n一度削除した旅は取り消せません')">
+  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+  <input type="submit" value="この旅を削除する">
+</button>
