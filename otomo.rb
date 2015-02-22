@@ -75,6 +75,7 @@ class OtomoApp < Sinatra::Base
     if params[:activity_id]
       @tabi.activity_ids = params[:activity_id].map{|_id|
         _id = BSON::ObjectId.from_string(_id)
+      }.map{|_id|
         activity_ids.find{|__id|
           __id == _id
         }
