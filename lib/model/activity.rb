@@ -25,7 +25,7 @@ class Activity
   end
 
   def has_any_detail?
-    false
+    !! memo
   end
 
   def tabi
