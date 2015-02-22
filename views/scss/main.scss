@@ -4,6 +4,7 @@
 $bg_color: #fff;
 $primary: #ffa466 ;
 $text: #666666;
+$link: #7ab266;
 $border: #efe3df;
 $header-bg: #f4ebe6;
 $main-bg: #f9f4f2;
@@ -26,6 +27,7 @@ ul, li {
 }
 a {
   text-decoration: none;
+  color: $link;
 }
 input {
   -webkit-appearance: none;
@@ -49,6 +51,12 @@ input {
   margin: 0 auto;
   padding: 15px;
   @include border-radius (3);
+}
+.main-input {
+  width: 100%;
+  border: 2px solid $border;
+  padding: 6px 4px;
+  @include border-radius(3);
 }
 
 
@@ -121,6 +129,12 @@ header {
 .edit-btn {
   text-align: right;
   font-size: 80%;
+  margin: 10px 0;
+  color: $link;
+  i {
+    padding: 0 2px 0 0;
+    vertical-align: top;
+  }
 }
 .activity-list {
   margin: 0 auto;
@@ -148,7 +162,7 @@ header {
 }
 .add-activity-input {
   width: 80%;
-  border: 2px solid $border;
+  border: 3px solid $border;
   padding: 6px 4px;
   @include border-radius(3);
 }
@@ -179,6 +193,16 @@ body.dragging, body.dragging * {
   cursor: move !important;
 }
 
+.rearrange-activity {
+  li {
+    border-bottom: 2px solid $border;
+    padding: 5px 0;
+  }
+}
+.preserve-btn {
+  margin: 10px 0 0 0;
+  padding: 3px 15px;
+}
 .sortable {
     .handle {
         cursor: move;

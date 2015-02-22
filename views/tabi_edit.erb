@@ -1,8 +1,10 @@
 <form action="<%= to(@tabi.edit_path) %>" method="post">
   <div>
-    <input name="title" type="text" placeholder="例：東京スカイツリーの旅" required value="<%= @tabi.title %>" />
+    <h3>タイトルを編集</h3>
+    <input name="title" type="text" placeholder="例：東京スカイツリーの旅" required value="<%= @tabi.title %>" class="main-input"/>
   </div>
-  <ul class="sortable js-sortable">
+  <h3>アクティビティを並び替え</h3>
+  <ul class="sortable js-sortable rearrange-activity">
     <% @tabi.activities.each{|activity| %>
       <li data-activity-id="<%= activity.id %>">
         <i class="fa fa-bars handle js-handle"></i>
@@ -13,7 +15,7 @@
   </ul>
 
   <div>
-    <input type="submit" value="保存"/>
+    <input type="submit" value="保存" class="primary-btn preserve-btn"/>
   </div>
   <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
 </form>
