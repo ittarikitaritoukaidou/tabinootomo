@@ -197,12 +197,14 @@ body.dragging, body.dragging * {
 .rearrange-activity {
   li {
     border-bottom: 2px solid $border;
-    padding: 5px 0;
+    padding: 10px 0;
+    font-size: 130%;
   }
 }
 .preserve-btn {
   margin: 10px 0 0 0;
   padding: 3px 15px;
+  font-size: 120%;
 }
 .sortable {
     .handle {
