@@ -219,6 +219,7 @@ body.dragging, body.dragging * {
   text-decoration: underline;
   background: none;
   margin-top: 10px;
+  padding: 0;
   @include sub-text-link;
 }
 .sortable {
