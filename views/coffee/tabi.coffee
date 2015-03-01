@@ -7,7 +7,14 @@ Tabi =
 
   Map:
     destroyPOI: ->
-      google.maps.InfoWindow.prototype.set = ->
+      set = google.maps.InfoWindow::set
+
+      google.maps.InfoWindow::set = (key, val) ->
+        if key == 'map'
+          if !@get('noSupress')
+            return
+        set.apply this, arguments
+
     latLngFromString: (str) ->
       return unless str
       center_string = str.split(',')
@@ -31,9 +38,64 @@ Tabi =
       )
       marker.setPosition center
 
+      map
+
+    mapFromLocations: ($map, locations) ->
+      options =
+        zoom: 14
+        disableDefaultUI: true
+
+      map = new google.maps.Map($map[0], options)
+
+      bounds = new google.maps.LatLngBounds
+
+      _.each locations, (l) ->
+        center = l.center
+        title = l.title
+        url = l.url
+        bounds.extend center
+
+        marker = new google.maps.Marker
+          map: map
+          anchorPoint: center
+          title: title
+
+        google.maps.event.addListener marker, 'click', ->
+          new google.maps.InfoWindow(
+            content: '<a href="' + url + '">' + title + '</a>'
+            noSupress: true
+        ).open(marker.getMap(), marker)
+
+        marker.setPosition center
+
+      map.fitBounds bounds
+
+      map
+
   Handlers:
     index: ->
       console.log '旅'
+
+    tabi: ->
+      Tabi.Map.destroyPOI()
+
+      show_map = ->
+        $map_container = $('.js-map')
+        return unless $map_container[0]
+        locations = []
+        $('.js-activity').each ->
+          l = $(this).attr('data-location')
+          if l
+            l = Tabi.Map.latLngFromString(l)
+            title = $(this).attr('data-title')
+            url = $(this).attr('data-url')
+            locations.push
+              center: l
+              title: title
+              url: url
+        map = Tabi.Map.mapFromLocations($('.js-map'), locations)
+
+      show_map()
 
     tabi_edit: ->
       $('ul.js-sortable').sortable(
@@ -112,7 +174,7 @@ Tabi =
 
       google.maps.event.addListener autocomplete, 'place_changed', ->
         place = autocomplete.getPlace()
-
-        set_location place.geometry.location
+        l = place?.geometry?.location
+        set_location l if l
 $ ->
   Tabi.doHandler()

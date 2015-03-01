@@ -59,4 +59,8 @@ class Tabi
     activity_ids.include? activity.id
   end
 
+  def has_any_location?
+    activities.any?{|a| a.has_location? }
+  end
+
 end

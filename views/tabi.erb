@@ -2,7 +2,13 @@
 <div class="main-box">
   <ul class="activity-list">
     <% @tabi.activities.each{|activity| %>
-      <li data-activity-id="<%= activity.id %>">
+      <li
+         class="js-activity"
+         data-activity-id="<%= activity.id %>"
+         <% if activity.has_location? %>data-location="<%= activity.location %>"<% end %>
+         data-title="<%= activity.title %>"
+         data-url="<%= @tabi.activity_path(activity) %>"
+         >
         <a href="<%= @tabi.activity_path(activity) %>" class="activity-list-link"><%= activity.title %></a>
       </li>
     <% } %>
@@ -23,6 +29,12 @@
 <div class="edit-btn">
   <a href="<%= @tabi.edit_path %>"><i class="fa fa-pencil"></i>この旅を編集する</a>
 </div>
+
+<%- if @tabi.has_any_location? -%>
+<div class="js-map" style="width: 100%; height: 230px"></div>
+<%- end -%>
+
+
 <div class="share">
   <h4>このURLを友達に送ろう</h4>
   <span>
