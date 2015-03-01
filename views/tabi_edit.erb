@@ -1,9 +1,10 @@
 <form action="<%= to(@tabi.edit_path) %>" method="post">
+  <h2 class="tabi-title">旅を編集</h2>
   <div>
-    <h3>タイトルを編集</h3>
+    <h3 class="item-title">タイトルを編集</h3>
     <input name="title" type="text" placeholder="例：東京スカイツリーの旅" required value="<%= @tabi.title %>" class="main-input"/>
   </div>
-  <h3>アクティビティを並び替え</h3>
+  <h3 class="item-title">アクティビティを並び替え</h3>
   <ul class="sortable js-sortable rearrange-activity">
     <% @tabi.activities.each{|activity| %>
       <li data-activity-id="<%= activity.id %>">
@@ -22,5 +23,5 @@
 
 <form method="POST" action="<%= @tabi.delete_path %>" onsubmit="return confirm('この旅を削除しますか？\n一度削除した旅は取り消せません')">
   <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
-  <input type="submit" value="この旅を削除する">
+  <input type="submit" value="この旅を削除する" class="delete-btn">
 </button>

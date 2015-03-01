@@ -1,5 +1,6 @@
 @import "compass";
 @import "normalize";
+@import "mixin";
 
 $bg_color: #fff;
 $primary: #ffa466 ;
@@ -29,8 +30,9 @@ a {
   text-decoration: none;
   color: $link;
 }
-input {
+input, input[type="search"] {
   -webkit-appearance: none;
+  box-sizing: border-box;
 }
 .container {
   max-width: 400px;
@@ -126,6 +128,9 @@ header {
   margin: .5em 0;
   text-align: center;
 }
+.item-title {
+  margin: 1.5em 0 .5em 0;
+}
 .edit-btn {
   text-align: right;
   font-size: 80%;
@@ -199,12 +204,22 @@ body.dragging, body.dragging * {
     border-bottom: 2px solid $border;
     padding: 10px 0;
     font-size: 130%;
+    &:first-child {
+      border-top: 2px solid $border;
+    }
   }
 }
 .preserve-btn {
   margin: 10px 0 0 0;
   padding: 3px 15px;
   font-size: 120%;
+}
+.delete-btn {
+  border: none;
+  text-decoration: underline;
+  background: none;
+  margin-top: 10px;
+  @include sub-text-link;
 }
 .sortable {
     .handle {

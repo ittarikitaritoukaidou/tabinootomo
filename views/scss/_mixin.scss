@@ -2,3 +2,11 @@
   border: 2px solid $border;
   @include border-radius(3);
 }
+
+@mixin sub-text-link {
+    color: #999;
+    font-size: 90%;
+    &:hover {
+        color: #b3b3b3;
+    }
+}
