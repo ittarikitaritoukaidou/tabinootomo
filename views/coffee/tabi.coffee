@@ -82,7 +82,7 @@ Tabi =
               icon: lineSymbol
               offset: '100%'
             } ]
-            strokeColor: '#97C388'
+            strokeColor: '#FFA466'
             map: map)
         prevCenter = marker.getPosition()
 
