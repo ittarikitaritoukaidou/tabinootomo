@@ -14,7 +14,7 @@
 
 <h3>場所</h3>
 
-<button type="button" class="js-delete-location" <% unless @activity.location %>style="display: none"<% end %>>
+<button type="button" class="js-delete-location" <% unless @activity.has_location? %>style="display: none"<% end %>>
   地図やめる
 </button>
 
@@ -29,7 +29,7 @@
 
 <div class="preview js-map-container">
 
-  <div class="js-map" style="width: 100%; height: 200px;"></div>
+  <div class="js-map" style="width: 100%; height: 200px; display: none;"></div>
 </div>
 
 <div>
