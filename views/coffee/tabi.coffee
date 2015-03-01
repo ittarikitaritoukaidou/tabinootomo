@@ -37,6 +37,7 @@ Tabi =
         clickable: false
         icon: '/images/marker.svg'
         animation: google.maps.Animation.BOUNCE
+        cursor: 'normal'
       )
       marker.setPosition center
 
