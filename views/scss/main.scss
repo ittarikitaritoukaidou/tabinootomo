@@ -41,6 +41,7 @@ input, input[type="search"] {
 .container {
   max-width: 400px;
   margin: 0 auto;
+  background: #fff;
 }
 .contents {
   padding: 0 15px;
@@ -70,9 +71,10 @@ input, input[type="search"] {
 
 // header
 header {
-  padding: 0 10px;
+  max-width: 400px;
   background: $header-bg;
   position: relative;
+  margin: 0 auto;
 }
 .title {
   margin: 0;
@@ -90,8 +92,12 @@ header {
 }
 .undo-btn {
   position: absolute;
+  font-size: 110%;
   top: 10px;
-  left: 15px;
+  left: 5px;
+  i {
+    margin: 0 3px 0 0;
+  }
 }
 
 // index page
@@ -143,7 +149,8 @@ header {
   padding: 10px 15px;
 }
 .item-title {
-  margin: 1.5em 0 .5em 0;
+  margin: 1.3em 0 .5em 0;
+  font-size: 100%;
 }
 .edit-btn {
   text-align: right;
@@ -176,7 +183,7 @@ header {
 .activity-list-empty {
   padding: 15px 0 0 0;
   text-align: center;
-  font-size: 80%;
+  font-size: 90%;
   p {
     margin: 0;
   }

@@ -2,6 +2,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/images/favicon.png">
     <title>
       <%- if @title -%>
         <%= @title %> - 旅のお供
@@ -19,7 +20,7 @@
         <img src="/images/logo.svg" alt="旅のお供">
       </a></h1>
       <% if @back_to %>
-        <a href="<%= to @back_to %>" class="undo-btn">もどる</a>
+        <a href="<%= to @back_to %>" class="undo-btn"><i class="fa fa-chevron-left"></i>戻る</a>
       <% end %>
     </header>
     <div class="container">
