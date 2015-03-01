@@ -8,6 +8,13 @@
 <%- if @activity.location -%>
 <h3>地図</h3>
 <div class="js-map" data-location="<%= @activity.location %>" style="width: 100%; height: 230px"></div>
+
+<%- if @activity.location -%>
+  <div>
+    <a href="http://maps.google.com/maps?q=<%= @activity.location %>" target="_blank">地図アプリで見る</a>
+  </div>
+<%- end -%>
+
 <%- end -%>
 
 <a href="<%= @activity.edit_path %>">編集</a>
