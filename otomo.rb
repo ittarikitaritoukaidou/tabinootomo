@@ -49,7 +49,7 @@ class OtomoApp < Sinatra::Base
         raise "not match" unless @tabi.has_activity?(@activity)
         @title = @activity.title
       rescue
-        redirect to '/'
+        redirect to @tabi ? @tabi.path : '/'
       end
     end
 
