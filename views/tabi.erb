@@ -8,11 +8,11 @@
     <% } %>
   </ul>
 
-  <% # まだリストになにも追加してないときこれ出したい %>
-  <div class="activity-list-empty">
-    <p>この旅で行きたい場所を追加してみよう！</p>
-  </div>
-  <% # まだリストになにも追加してないときこれ出したい %>
+  <% if @tabi.activities.empty? %>
+    <div class="activity-list-empty">
+      <p>この旅で行きたい場所を追加してみよう！</p>
+    </div>
+  <% end %>
 
   <form method="POST" action="<%= @tabi.append_activity_path %>" class="js-append-new-activity-form add-activity">
     <input name="title" type="text" placeholder="例：水族館" required class="add-activity-input" />
