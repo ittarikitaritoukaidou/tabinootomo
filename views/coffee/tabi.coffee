@@ -35,6 +35,7 @@ Tabi =
         map: map,
         anchorPoint: center
         clickable: false
+        icon: '/images/marker.svg'
       )
       marker.setPosition center
 
@@ -65,7 +66,7 @@ Tabi =
           anchorPoint: center
           title: title
           zIndex: 10
-          icon: 'http://i.gyazo.com/1707893b27fcaf566d3f22df89f65454.png'
+          icon: '/images/marker.svg'
           animation: google.maps.Animation.BOUNCE
 
         google.maps.event.addListener marker, 'click', ->
@@ -159,6 +160,7 @@ Tabi =
         map: map,
         anchorPoint: new google.maps.Point(0, -29)
         draggable: true
+        icon: '/images/marker.svg'
       )
       marker.setPosition center
 
