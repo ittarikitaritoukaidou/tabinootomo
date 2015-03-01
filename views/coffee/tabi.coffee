@@ -64,6 +64,9 @@ Tabi =
           map: map
           anchorPoint: center
           title: title
+          zIndex: 10
+          icon: 'http://i.gyazo.com/1707893b27fcaf566d3f22df89f65454.png'
+          animation: google.maps.Animation.BOUNCE
 
         google.maps.event.addListener marker, 'click', ->
           new google.maps.InfoWindow(
@@ -74,7 +77,7 @@ Tabi =
         marker.setPosition center
 
         if prevCenter
-          lineSymbol = path: google.maps.SymbolPath.FORWARD_OPEN_ARROW
+          lineSymbol = path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
           lineCoordinates = [ prevCenter, marker.getPosition() ]
           line = new google.maps.Polyline(
             path: lineCoordinates
@@ -83,6 +86,7 @@ Tabi =
               offset: '100%'
             } ]
             strokeColor: '#FFA466'
+            zIndex: 20
             map: map)
         prevCenter = marker.getPosition()
 
