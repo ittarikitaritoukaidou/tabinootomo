@@ -9,6 +9,7 @@ $link: #7ab266;
 $border: #efe3df;
 $header-bg: #f4ebe6;
 $main-bg: #f9f4f2;
+$sub-bg: #f4f4f4;
 $list-link: #666;
 
 
@@ -136,7 +137,7 @@ header {
   }
 }
 .tabi-title {
-  background: #f4f4f4;
+  background: $sub-bg;
   margin-top: 0;
   font-size: 120%;
   padding: 10px 15px;
@@ -198,12 +199,19 @@ header {
 .share {
   text-align: center;
   margin: 20px 0 0 0;
+  padding: 15px;
+  background: $sub-bg;
+  @include border-radius(3);
+}
+.share-title {
+  margin: .5em 0 .7em;
 }
 .copy-url {
-  width: 100%;
+  margin: 10px 0 0 0;
+  border: 2px solid #ddd;
 }
 .activity-title {
-  background: #f4f4f4;
+  background: $sub-bg;
   margin-top: 0;
   font-size: 110%;
   font-weight: normal;

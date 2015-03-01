@@ -1,5 +1,8 @@
 <h2 class="tabi-title"><%= @tabi.title %></h2>
 <div class="contents">
+  <div class="edit-btn">
+    <a href="<%= @tabi.edit_path %>"><i class="fa fa-pencil"></i>編集する</a>
+  </div>
   <div class="main-box">
     <ul class="activity-list">
       <% @tabi.activities.each{|activity| %>
@@ -21,11 +24,8 @@
       <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
     </form>
   </div>
-  <div class="edit-btn">
-    <a href="<%= @tabi.edit_path %>"><i class="fa fa-pencil"></i>この旅を編集する</a>
-  </div>
   <div class="share">
-    <h4>このURLを友達に送ろう</h4>
+    <h4 class="share-title">このURLを友達に送ろう</h4>
     <span>
       <script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411" ></script>
       <script type="text/javascript">
