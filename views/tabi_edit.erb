@@ -1,6 +1,6 @@
+<h2 class="activity-title"><span class="current-avtivity"><%= @tabi.title %></span>を編集</h2>
 <div class="contents">
   <form action="<%= to(@tabi.edit_path) %>" method="post">
-    <h2 class="tabi-title">旅を編集</h2>
     <div>
       <h3 class="item-title">タイトルを編集</h3>
       <input name="title" type="text" placeholder="例：東京スカイツリーの旅" required value="<%= @tabi.title %>" class="main-input"/>
