@@ -24,14 +24,12 @@
   <a href="<%= @tabi.edit_path %>"><i class="fa fa-pencil"></i>この旅を編集する</a>
 </div>
 <div class="share">
+  <h4>このURLを友達に送ろう</h4>
   <span>
     <script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411" ></script>
     <script type="text/javascript">
       new media_line_me.LineButton({"pc":false,"lang":"ja","type":"e"});
     </script>
   </span>
-  <label>
-    このURLを友達に送ろう
-    <input readonly value="<%= to @tabi.path %>" onclick="select()"/ class="copy-url main-input">
-  </label>
+  <input readonly value="<%= to @tabi.path %>" onclick="select()"/ class="copy-url main-input">
 </div>
