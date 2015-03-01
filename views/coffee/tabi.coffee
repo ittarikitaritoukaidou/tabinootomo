@@ -55,8 +55,9 @@ Tabi =
 
       Tabi.Map.destroyPOI()
       center = Tabi.Map.latLngFromString($('.js-location-input').val())
-      unless center
-        $map.hide()
+      if center
+        $map.show()
+      else
         center = new google.maps.LatLng(35, 135)
       options =
         center: center
@@ -70,17 +71,12 @@ Tabi =
       autocomplete = new google.maps.places.Autocomplete($address_input[0])
       autocomplete.bindTo('bounds', map)
 
-
       marker = new google.maps.Marker(
         map: map,
         anchorPoint: new google.maps.Point(0, -29)
         draggable: true
       )
       marker.setPosition center
-
-      google.maps.event.addListener map, 'click', (event) ->
-        console.log 'click!!'
-        event.stop()
 
       google.maps.event.addListener marker, 'dragend', =>
         set_location marker.getPosition()
