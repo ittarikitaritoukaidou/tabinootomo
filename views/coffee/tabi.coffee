@@ -117,6 +117,6 @@ Tabi =
       google.maps.event.addListener autocomplete, 'place_changed', ->
         place = autocomplete.getPlace()
 
-        set_location place.geometry
+        set_location place.geometry.location
 $ ->
   Tabi.doHandler()
