@@ -7,7 +7,7 @@ $primary: #ffa466 ;
 $text: #666666;
 $link: #7ab266;
 $border: #efe3df;
-$header-bg: #f4ebe6;
+$header-bg: #efe3dc;
 $main-bg: #f9f4f2;
 $sub-bg: #f4f4f4;
 $list-link: #666;
@@ -57,7 +57,7 @@ input, input[type="search"] {
 }
 .main-box {
   background: $main-bg;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   padding: 15px;
   @include border-radius (3);
 }
@@ -225,7 +225,7 @@ header {
   font-weight: normal;
   padding: 10px 15px;
 }
-.current-avtivity {
+.current-activity {
   font-weight: bold;
 }
 

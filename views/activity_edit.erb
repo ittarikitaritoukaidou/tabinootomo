@@ -1,18 +1,17 @@
-<h2 class="tabi-title">アクティビティを編集</h2>
+<h2 class="activity-title"><span class="current-activity">「<%= @activity.title %>」</span>を編集</h2>
 <div class="contents">
   <form id="activity_edit_form" action="<%= to(@activity.edit_path) %>" method="post">
-    <h3>行き先</h3>
+    <h3 class="item-title">行き先</h3>
     <div>
       <input name="title" type="text" placeholder="例：水族館" required value="<%= @activity.title %>" class="main-input"/>
     </div>
-
-    <h3>メモ</h3>
+    <h3 class="item-title">メモ</h3>
     <textarea name="memo" placeholder="エイヒレの本体を見れます" class="main-input"><%= @activity.memo %></textarea>
     <input type="hidden" name="location" value="<%= @activity.location %>" class="js-location-input" />
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
   </form>
   <% # コメント %>
-<h3>場所</h3>
+<h3 class="item-title">地図を追加</h3>
 
 <button type="button" class="js-delete-location" <% unless @activity.has_location? %>style="display: none"<% end %>>
   地図やめる
@@ -21,7 +20,7 @@
 <div>
 <form class="js-search-form">
   <label>
-    検索
+    Google マップから検索
   <input type="search" name="address" class="js-address-input main-input">
   </label>
 </form>
