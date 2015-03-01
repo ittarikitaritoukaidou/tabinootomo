@@ -93,7 +93,11 @@ Tabi =
             map: map)
         prevCenter = marker.getPosition()
 
-      map.fitBounds bounds
+      if locations.length > 1
+        map.fitBounds bounds
+      else
+        map.setCenter(locations[0].center)
+        map.setZoom(14)
 
       map
 
