@@ -44,6 +44,10 @@ Tabi =
       options =
         zoom: 14
         disableDefaultUI: true
+        clickable: false
+        draggable: false
+        disableDefaultUI: true
+        disableDoubleClickZoom: true
 
       map = new google.maps.Map($map[0], options)
 
