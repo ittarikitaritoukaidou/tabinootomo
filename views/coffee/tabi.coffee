@@ -51,6 +51,7 @@ Tabi =
       show_map()
     activity_edit: ->
       $map = $('.js-map')
+      $delete_location = $('.js-delete-location')
 
       Tabi.Map.destroyPOI()
       center = Tabi.Map.latLngFromString($('.js-location-input').val())
@@ -68,6 +69,7 @@ Tabi =
       $address_input = $('.js-address-input')
       autocomplete = new google.maps.places.Autocomplete($address_input[0])
       autocomplete.bindTo('bounds', map)
+
 
       marker = new google.maps.Marker(
         map: map,
@@ -93,6 +95,15 @@ Tabi =
         $('.js-location-input').val(location.toUrlValue())
 
         marker.setPosition location
+        $delete_location.show()
+
+      delete_location = ->
+        $map.hide()
+        $address_input.val('')
+        $('.js-location-input').val('')
+        $delete_location.hide()
+
+      $delete_location.on 'click', delete_location
 
       placeService = new google.maps.places.PlacesService(map)
       $('.js-search-form').on 'submit', ->
