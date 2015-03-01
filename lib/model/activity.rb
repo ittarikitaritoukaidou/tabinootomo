@@ -28,6 +28,10 @@ class Activity
     !! memo
   end
 
+  def has_location?
+    location && location.length > 0
+  end
+
   def tabi
     Tabi.find(tabi_id)
   end

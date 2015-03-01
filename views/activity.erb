@@ -5,20 +5,15 @@
   <p class="memo"><%== rich_text(@activity.memo) %></p>
   <%- end -%>
 
-  <%- if @activity.location -%>
-  <h3>地図</h3>
-  <%- if @activity.location -%>
-    <div>
-      <a href="http://maps.google.com/maps?q=<%= @activity.location %>" target="_blank"><i class="fa fa-external-link"></i>地図アプリで見る</a>
-    </div>
-  <%- end -%>
-  <div class="js-map" data-location="<%= @activity.location %>" style="width: 100%; height: 230px"></div>
-
-
-
-  <%- end -%>
-
   <a href="<%= @activity.edit_path %>" class="edit-btn"><i class="fa fa-pencil"></i>このアクティビティを編集する</a>
+
+<%- if @activity.has_location? -%>
+<h3>地図</h3>
+  <div>
+    <a href="http://maps.google.com/maps?q=<%= @activity.location %>" target="_blank"><i class="fa fa-external-link"></i>地図アプリで見る</a>
+  </div>
+<div class="js-map" data-location="<%= @activity.location %>" style="width: 100%; height: 230px"></div>
+<%- end -%>
 
   <%- unless @activity.has_any_detail? -%>
     <p>編集して，この行き先に説明や場所を追加すると便利です．</p>
