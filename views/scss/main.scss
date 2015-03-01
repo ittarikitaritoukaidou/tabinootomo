@@ -29,6 +29,9 @@ ul, li {
 a {
   text-decoration: none;
   color: $link;
+  &:hover {
+    color: lighten($link, 10%);
+  }
 }
 input, input[type="search"] {
   -webkit-appearance: none;
@@ -154,6 +157,9 @@ header {
   padding: 12px 2px;
   color: $list-link;
   background: url("/images/arrow-right.svg") no-repeat right center;
+  &:hover {
+    color: lighten($list-link, 15%);
+  }
 }
 .activity-list-empty {
   padding: 15px 0 0 0;
