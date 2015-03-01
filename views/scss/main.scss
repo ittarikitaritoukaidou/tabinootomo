@@ -9,6 +9,7 @@ $link: #7ab266;
 $border: #efe3df;
 $header-bg: #f4ebe6;
 $main-bg: #f9f4f2;
+$sub-bg: #f4f4f4;
 $list-link: #666;
 
 
@@ -40,7 +41,9 @@ input, input[type="search"] {
 .container {
   max-width: 400px;
   margin: 0 auto;
-  padding: 0 5%;
+}
+.contents {
+  padding: 0 15px;
 }
 .primary-btn {
   background: $primary;
@@ -127,16 +130,17 @@ header {
   font-size: 110%;
 }
 
-// tabi
+// tabi, activity
 .page-tabi {
   .main-box {
     padding: 0 15px 15px 15px;
   }
 }
 .tabi-title {
-  font-size: 130%;
-  margin: .5em 0;
-  text-align: center;
+  background: $sub-bg;
+  margin-top: 0;
+  font-size: 120%;
+  padding: 10px 15px;
 }
 .item-title {
   margin: 1.5em 0 .5em 0;
@@ -195,9 +199,26 @@ header {
 .share {
   text-align: center;
   margin: 20px 0 0 0;
+  padding: 15px;
+  background: $sub-bg;
+  @include border-radius(3);
+}
+.share-title {
+  margin: .5em 0 .7em;
 }
 .copy-url {
-  width: 100%;
+  margin: 10px 0 0 0;
+  border: 2px solid #ddd;
+}
+.activity-title {
+  background: $sub-bg;
+  margin-top: 0;
+  font-size: 110%;
+  font-weight: normal;
+  padding: 10px 15px;
+}
+.current-avtivity {
+  font-weight: bold;
 }
 
 
