@@ -73,11 +73,8 @@ Tabi =
         return unless geometry?.viewport || geometry?.location
 
         $map.show()
-        if geometry.viewport
-          map.fitBounds geometry.viewport
-        else
-          map.setCenter geometry.location
-          map.setZoom 14
+        map.setCenter geometry.location
+        map.setZoom 14
 
         $('.js-location-input').val(geometry.location.toUrlValue())
 
