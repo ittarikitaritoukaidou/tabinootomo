@@ -69,11 +69,13 @@ input, input[type="search"] {
 header {
   padding: 0 10px;
   background: $header-bg;
+  position: relative;
 }
 .title {
   margin: 0;
   padding: 8px 0;
   font-size: 150%;
+  text-align: center;
   a {
     text-decoration: none;
     color: $text;
@@ -82,6 +84,11 @@ header {
     width: 100px;
     height: 24px;
   }
+}
+.undo-btn {
+  position: absolute;
+  top: 10px;
+  left: 15px;
 }
 
 // index page
