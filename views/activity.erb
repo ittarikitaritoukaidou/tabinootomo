@@ -1,14 +1,10 @@
 <h2 class="activity-title"><%= @tabi.title %> > <span class="current-avtivity"><%= @activity.title %></span></h2>
 <div class="contents">
-  <a href="<%= @tabi.path %>">もどる</a>
+  <a href="<%= @activity.edit_path %>" class="edit-btn"><i class="fa fa-pencil"></i>編集</a>
   <%- if @activity.memo -%>
   <p class="memo"><%== rich_text(@activity.memo) %></p>
   <%- end -%>
-
-  <a href="<%= @activity.edit_path %>" class="edit-btn"><i class="fa fa-pencil"></i>このアクティビティを編集する</a>
-
 <%- if @activity.has_location? -%>
-<h3>地図</h3>
   <div>
     <a href="http://maps.google.com/maps?q=<%= @activity.location %>" target="_blank"><i class="fa fa-external-link"></i>地図アプリで見る</a>
   </div>
