@@ -36,6 +36,7 @@ Tabi =
         anchorPoint: center
         clickable: false
         icon: '/images/marker.svg'
+        animation: google.maps.Animation.BOUNCE
       )
       marker.setPosition center
 
@@ -161,6 +162,7 @@ Tabi =
         anchorPoint: new google.maps.Point(0, -29)
         draggable: true
         icon: '/images/marker.svg'
+        animation: google.maps.Animation.BOUNCE
       )
       marker.setPosition center
 
