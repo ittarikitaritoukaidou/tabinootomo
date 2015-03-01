@@ -53,6 +53,7 @@ Tabi =
 
       bounds = new google.maps.LatLngBounds
 
+      prevCenter = null
       _.each locations, (l) ->
         center = l.center
         title = l.title
@@ -71,6 +72,19 @@ Tabi =
         ).open(marker.getMap(), marker)
 
         marker.setPosition center
+
+        if prevCenter
+          lineSymbol = path: google.maps.SymbolPath.FORWARD_OPEN_ARROW
+          lineCoordinates = [ prevCenter, marker.getPosition() ]
+          line = new google.maps.Polyline(
+            path: lineCoordinates
+            icons: [ {
+              icon: lineSymbol
+              offset: '100%'
+            } ]
+            strokeColor: '#97C388'
+            map: map)
+        prevCenter = marker.getPosition()
 
       map.fitBounds bounds
 
