@@ -1,35 +1,37 @@
-<h2 class="tabi-title"><%= @tabi.title %></h2>
-<div class="main-box">
-  <ul class="activity-list">
-    <% @tabi.activities.each{|activity| %>
-      <li data-activity-id="<%= activity.id %>">
-        <a href="<%= @tabi.activity_path(activity) %>" class="activity-list-link"><%= activity.title %></a>
-      </li>
-    <% } %>
-  </ul>
+<div class="contents">
+  <h2 class="tabi-title"><%= @tabi.title %></h2>
+  <div class="main-box">
+    <ul class="activity-list">
+      <% @tabi.activities.each{|activity| %>
+        <li data-activity-id="<%= activity.id %>">
+          <a href="<%= @tabi.activity_path(activity) %>" class="activity-list-link"><%= activity.title %></a>
+        </li>
+      <% } %>
+    </ul>
 
-  <% # まだリストになにも追加してないときこれ出したい %>
-  <div class="activity-list-empty">
-    <p>この旅で行きたい場所を追加してみよう！</p>
+    <% # まだリストになにも追加してないときこれ出したい %>
+    <div class="activity-list-empty">
+      <p>この旅で行きたい場所を追加してみよう！</p>
+    </div>
+    <% # まだリストになにも追加してないときこれ出したい %>
+
+    <form method="POST" action="<%= @tabi.append_activity_path %>" class="js-append-new-activity-form add-activity">
+      <input name="title" type="text" placeholder="例：水族館" required class="add-activity-input" />
+      <input type="submit" value="追加" class="add-activity-btn primary-btn"/>
+      <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+    </form>
   </div>
-  <% # まだリストになにも追加してないときこれ出したい %>
-
-  <form method="POST" action="<%= @tabi.append_activity_path %>" class="js-append-new-activity-form add-activity">
-    <input name="title" type="text" placeholder="例：水族館" required class="add-activity-input" />
-    <input type="submit" value="追加" class="add-activity-btn primary-btn"/>
-    <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
-  </form>
-</div>
-<div class="edit-btn">
-  <a href="<%= @tabi.edit_path %>"><i class="fa fa-pencil"></i>この旅を編集する</a>
-</div>
-<div class="share">
-  <h4>このURLを友達に送ろう</h4>
-  <span>
-    <script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411" ></script>
-    <script type="text/javascript">
-      new media_line_me.LineButton({"pc":false,"lang":"ja","type":"e"});
-    </script>
-  </span>
-  <input readonly value="<%= to @tabi.path %>" onclick="select()"/ class="copy-url main-input">
+  <div class="edit-btn">
+    <a href="<%= @tabi.edit_path %>"><i class="fa fa-pencil"></i>この旅を編集する</a>
+  </div>
+  <div class="share">
+    <h4>このURLを友達に送ろう</h4>
+    <span>
+      <script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411" ></script>
+      <script type="text/javascript">
+        new media_line_me.LineButton({"pc":false,"lang":"ja","type":"e"});
+      </script>
+    </span>
+    <input readonly value="<%= to @tabi.path %>" onclick="select()"/ class="copy-url main-input">
+  </div>
 </div>

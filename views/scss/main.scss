@@ -40,7 +40,9 @@ input, input[type="search"] {
 .container {
   max-width: 400px;
   margin: 0 auto;
-  padding: 0 5%;
+}
+.contents {
+  padding: 0 15px;
 }
 .primary-btn {
   background: $primary;
@@ -127,7 +129,7 @@ header {
   font-size: 110%;
 }
 
-// tabi
+// tabi, activity
 .page-tabi {
   .main-box {
     padding: 0 15px 15px 15px;
@@ -198,6 +200,16 @@ header {
 }
 .copy-url {
   width: 100%;
+}
+.activity-title {
+  background: #f4f4f4;
+  margin-top: 0;
+  font-size: 100%;
+  font-weight: normal;
+  padding: 10px;
+}
+.current-avtivity {
+  font-weight: bold;
 }
 
 

@@ -1,36 +1,38 @@
-<h2 class="tabi-title">アクティビティを編集</h2>
-<form id="activity_edit_form" action="<%= to(@activity.edit_path) %>" method="post">
-  <h3>行き先</h3>
+<div class="contents">
+  <h2 class="tabi-title">アクティビティを編集</h2>
+  <form id="activity_edit_form" action="<%= to(@activity.edit_path) %>" method="post">
+    <h3>行き先</h3>
+    <div>
+      <input name="title" type="text" placeholder="例：水族館" required value="<%= @activity.title %>" class="main-input"/>
+    </div>
+
+    <h3>メモ</h3>
+    <textarea name="memo" placeholder="エイヒレの本体を見れます" class="main-input"><%= @activity.memo %></textarea>
+    <input type="hidden" name="location" value="<%= @activity.location %>" class="js-location-input" />
+    <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+  </form>
+  <% # コメント %>
+
+  <h3>場所</h3>
   <div>
-    <input name="title" type="text" placeholder="例：水族館" required value="<%= @activity.title %>" class="main-input"/>
+  <form class="js-search-form">
+    <label>
+      検索
+    <input type="search" name="address" class="js-address-input main-input">
+    </label>
+  </form>
   </div>
 
-  <h3>メモ</h3>
-  <textarea name="memo" placeholder="エイヒレの本体を見れます" class="main-input"><%= @activity.memo %></textarea>
-  <input type="hidden" name="location" value="<%= @activity.location %>" class="js-location-input" />
-  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
-</form>
-<% # コメント %>
+  <div class="preview js-map-container">
+    <div class="js-map" style="width: 100%; height: 200px;"></div>
+  </div>
 
-<h3>場所</h3>
-<div>
-<form class="js-search-form">
-  <label>
-    検索
-  <input type="search" name="address" class="js-address-input main-input">
-  </label>
-</form>
+  <div>
+    <input type="submit" value="保存" form="activity_edit_form" class="primary-btn preserve-btn">
+  </div>
+
+  <form method="POST" action="<%= @activity.delete_path %>" onsubmit="return confirm('この行き先を削除しますか？\n一度削除した行き先は取り消せません')">
+    <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
+    <input type="submit" value="この行き先を削除する" class="delete-btn">
+  </button>
 </div>
-
-<div class="preview js-map-container">
-  <div class="js-map" style="width: 100%; height: 200px;"></div>
-</div>
-
-<div>
-  <input type="submit" value="保存" form="activity_edit_form" class="primary-btn preserve-btn">
-</div>
-
-<form method="POST" action="<%= @activity.delete_path %>" onsubmit="return confirm('この行き先を削除しますか？\n一度削除した行き先は取り消せません')">
-  <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
-  <input type="submit" value="この行き先を削除する" class="delete-btn">
-</button>
