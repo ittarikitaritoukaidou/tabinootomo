@@ -15,11 +15,17 @@ Tabi =
       options =
         center: center
         zoom: 14
+        clickable: false
+        draggable: false
+        disableDefaultUI: true
+        disableDoubleClickZoom: true
+
       map = new google.maps.Map($map[0], options)
 
       marker = new google.maps.Marker(
         map: map,
         anchorPoint: center
+        clickable: false
       )
       marker.setPosition center
 
