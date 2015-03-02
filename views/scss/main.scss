@@ -34,7 +34,7 @@ a {
     color: lighten($link, 10%);
   }
 }
-input, input[type="search"] {
+input, input[type="search"], textarea {
   -webkit-appearance: none;
   box-sizing: border-box;
 }
