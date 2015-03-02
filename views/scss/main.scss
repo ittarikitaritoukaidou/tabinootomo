@@ -241,6 +241,20 @@ header {
 .current-activity {
   font-weight: bold;
 }
+.map-view {
+  position: relative;
+}
+.close-btn {
+  background: #999;
+  color: #fff;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 180%;
+  width: 40px;
+  height: 40px;
+}
 
 
 // footer
