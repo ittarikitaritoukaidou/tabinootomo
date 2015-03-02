@@ -12,11 +12,6 @@
   </form>
   <% # コメント %>
 <h3 class="item-title">地図を追加</h3>
-
-<button type="button" class="js-delete-location" <% unless @activity.has_location? %>style="display: none"<% end %>>
-  地図やめる
-</button>
-
 <div>
 <form class="js-search-form">
   <label>
@@ -28,15 +23,16 @@
 
 <div class="preview js-map-container">
 
-  <div class="js-map" style="width: 100%; height: 200px; display: none;"></div>
+  <div class="js-map" style="width: 100%; height: 200px; display: none; margin-bottom:10px;"></div>
 </div>
-
-
+<button type="button" class="js-delete-location secondary-btn" <% unless @activity.has_location? %>style="display: none"<% end %>>
+  地図やめる
+</button>
    <div>
      <input type="submit" value="保存" form="activity_edit_form" class="primary-btn preserve-btn">
    </div>
 
-  <form method="POST" action="<%= @activity.delete_path %>" onsubmit="return confirm('この行き先を削除しますか？\n一度削除した行き先は取り消せません')">
+  <form method="POST" action="<%= @activity.delete_path %>" class="delete-form" onsubmit="return confirm('この行き先を削除しますか？\n一度削除した行き先は取り消せません')">
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
     <input type="submit" value="この行き先を削除する" class="delete-btn">
   </button>

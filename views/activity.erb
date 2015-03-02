@@ -8,7 +8,7 @@
   <%- end -%>
 <%- if @activity.has_location? -%>
   <div>
-    <a href="http://maps.google.com/maps?q=<%= @activity.location %>" target="_blank"><i class="fa fa-external-link"></i>地図アプリで見る</a>
+    <a href="http://maps.google.com/maps?q=<%= @activity.location %>" target="_blank" class="secondary-btn"><i class="fa fa-map-marker"></i>地図アプリで見る</a>
   </div>
 <div class="js-map" data-location="<%= @activity.location %>" style="width: 100%; height: 230px"></div>
 <%- end -%>

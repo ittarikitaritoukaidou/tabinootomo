@@ -55,6 +55,19 @@ input, input[type="search"] {
   border-bottom: 3px solid darken($primary, 5%);
   @include border-radius (3);
 }
+.secondary-btn {
+  background: #86b7c4;
+  color: #fff;
+  padding: 4px 6px;
+  font-size: 90%;
+  margin: 0 0 5px 0;
+  display: inline-block;
+  border: none;
+  @include border-radius(3);
+  i {
+    margin: 0 3px 0 0;
+  }
+}
 .main-box {
   background: $main-bg;
   margin: 0 auto 20px;
@@ -254,8 +267,12 @@ body.dragging, body.dragging * {
 }
 .preserve-btn {
   margin: 10px 0 0 0;
-  padding: 3px 15px;
+  padding: 5px 15px;
   font-size: 120%;
+  width: 100%;
+}
+.delete-form {
+  text-align: right;
 }
 .delete-btn {
   border: none;
