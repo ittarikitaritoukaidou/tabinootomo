@@ -273,6 +273,7 @@ body.dragging, body.dragging * {
   position: relative;
 
   li {
+    line-height: 1.2;
     border-bottom: 2px solid $border;
     padding: 10px 0;
     font-size: 130%;

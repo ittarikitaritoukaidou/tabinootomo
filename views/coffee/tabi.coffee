@@ -128,11 +128,8 @@ Tabi =
 
     tabi_edit: ->
       $('ul.js-sortable').sortable
+        axis: 'y'
         handle: '.js-handle'
-        onDrag: ($item, position, _super, event) ->
-          position.left = 0
-          $item.css(position)
-        placeholder: '<li >&nbsp;</li>'
 
     activity: ->
       Tabi.Map.destroyPOI()
