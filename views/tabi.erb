@@ -1,4 +1,9 @@
 <h2 class="tabi-title"><%= @tabi.title %></h2>
+
+<%- if @tabi.memo && @tabi.memo.length > 0 -%>
+  <p class="memo"><%== rich_text(@tabi.memo) %></p>
+<%- end -%>
+
 <div class="contents">
   <div class="edit-btn">
     <a href="<%= @tabi.edit_path %>"><i class="fa fa-pencil"></i>編集する</a>

@@ -89,6 +89,7 @@ class OtomoApp < Sinatra::Base
     require_tabi
 
     @tabi.title = params[:title]
+    @tabi.memo = params[:memo]
 
     activity_ids = @tabi.activity_ids
 

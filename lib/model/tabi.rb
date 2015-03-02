@@ -3,9 +3,11 @@ class Tabi
   include Mongoid::Timestamps
 
   field :title, type: String
+  field :memo, type: String
   field :activity_ids, type: Array, default: []
 
   validates :title, length: {maximum: 256, allow_blank: false}
+  validates :memo, length: {maximum: 256000, allow_blank: true}
 
   def path
     "/tabi/#{ id }"
