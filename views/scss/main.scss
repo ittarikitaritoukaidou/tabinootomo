@@ -283,8 +283,11 @@ body.dragging, body.dragging * {
     }
 
     .handle {
-      padding: 5px;
-      margin: -5px;
+      @include border-radius(3);
+      border: 1px solid #eee;
+      background: #f5f5f5;
+      padding: 5px 5px 5px 80px;
+      margin: -5px 0px;
       float:right;
       cursor: move;
     }

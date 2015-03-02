@@ -129,6 +129,7 @@ Tabi =
     tabi_edit: ->
       $('ul.js-sortable').sortable
         axis: 'y'
+        handle: '.js-handle'
 
     activity: ->
       Tabi.Map.destroyPOI()
