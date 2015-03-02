@@ -131,7 +131,7 @@ Tabi =
         handle: '.js-handle'
         onDrag: ($item, position, _super, event) ->
           position.left = 0
-          $item.css(position)
+          $item.css(position).text(position.top)
         placeholder: '<li >&nbsp;</li>'
 
     activity: ->
