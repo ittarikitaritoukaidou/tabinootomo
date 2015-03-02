@@ -256,6 +256,8 @@ body.dragging, body.dragging * {
 }
 
 .rearrange-activity {
+  position: relative;
+
   li {
     border-bottom: 2px solid $border;
     padding: 10px 0;
@@ -263,6 +265,20 @@ body.dragging, body.dragging * {
     &:first-child {
       border-top: 2px solid $border;
     }
+
+    .handle {
+      padding: 5px;
+      margin: -5px;
+      float:right;
+      cursor: move;
+    }
+
+    &.dragged {
+      position: absolute;
+      opacity: 0.5;
+      z-index: 2000;
+    }
+
   }
 }
 .preserve-btn {
@@ -281,15 +297,4 @@ body.dragging, body.dragging * {
   margin-top: 10px;
   padding: 0;
   @include sub-text-link;
-}
-.sortable {
-    .handle {
-        cursor: move;
-    }
-
-    .dragged {
-        position: absolute;
-        opacity: 0.5;
-        z-index: 2000;
-    }
 }

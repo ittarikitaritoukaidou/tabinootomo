@@ -13,8 +13,8 @@
     <ul class="sortable js-sortable rearrange-activity">
       <% @tabi.activities.each{|activity| %>
         <li data-activity-id="<%= activity.id %>">
-          <i class="fa fa-bars handle js-handle"></i>
           <%= activity.title %>
+          <i class="fa fa-bars handle js-handle"></i>
           <input type="hidden" name="activity_id[]" value="<%= activity.id %>"/>
         </li>
       <% } %>
