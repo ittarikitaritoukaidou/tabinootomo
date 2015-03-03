@@ -91,6 +91,14 @@ Tabi =
             strokeColor: '#FFA466'
             zIndex: 20
             map: map)
+
+          params =
+            saddr: prevCenter.toUrlValue()
+            daddr: marker.getPosition().toUrlValue()
+          route = 'https://www.google.co.jp/maps?' + $.param params
+          google.maps.event.addListener line, 'click', ->
+            window.open route
+
         prevCenter = marker.getPosition()
 
       if locations.length > 1
