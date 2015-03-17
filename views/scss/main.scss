@@ -11,7 +11,7 @@ $header-bg: #efe3dc;
 $main-bg: #f9f4f2;
 $sub-bg: #f4f4f4;
 $list-link: #666;
-
+$brown: #e5d6d1;
 
 
 // common
@@ -187,12 +187,12 @@ header {
       position: absolute;
       width: 2px;
       height: 20px;
-      background: #e5d6d1;
+      background: $brown;
       top: -10px;
       left: 8px;
     }
     &:last-child {
-      border-bottom: 1px solid #e5d6d1;
+      border-bottom: 1px solid $brown;
     }
   }
 }
@@ -201,9 +201,6 @@ header {
   font-size: 110%;
   padding: 12px 2px;
   background: url("/images/arrow-right.svg") no-repeat right center;
-  &:hover {
-    color: lighten($list-link, 15%);
-  }
   &:before {
     content: "";
     display: inline-block;
@@ -211,8 +208,7 @@ header {
     height: 10px;
     background: $primary;
     margin-right: 10px;
-
-    border: 2px solid #e5d6d1;
+    border: 2px solid $brown;
     @include border-radius(7px);
   }
 }
