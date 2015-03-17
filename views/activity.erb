@@ -3,7 +3,7 @@
   <div class="edit-btn">
     <a href="<%= @activity.edit_path %>"><i class="fa fa-pencil"></i>編集</a>
   </div>
-  <%- if @activity.memo && @activity.memo.length > 0 -%>
+  <%- if @activity.has_memo? -%>
   <p class="memo"><%== rich_text(@activity.memo) %></p>
   <%- end -%>
 <%- if @activity.has_location? -%>

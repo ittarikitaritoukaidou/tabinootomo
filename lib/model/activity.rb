@@ -25,7 +25,12 @@ class Activity
   end
 
   def has_any_detail?
-    !! memo
+    warn self
+    has_memo? || has_location?
+  end
+
+  def has_memo?
+    memo && memo.length > 0
   end
 
   def has_location?

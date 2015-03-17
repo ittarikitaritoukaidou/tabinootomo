@@ -47,6 +47,7 @@ class OtomoApp < Sinatra::Base
       begin
         @activity = Activity.find(params[:activity_id])
         raise "not match" unless @tabi.has_activity?(@activity)
+
         @title = @activity.title
       rescue
         redirect to @tabi ? @tabi.path : '/'
@@ -123,13 +124,18 @@ class OtomoApp < Sinatra::Base
     require_tabi
     activity = @tabi.append_activity params[:title]
 
-    redirect to @tabi.path
+    redirect to activity.edit_path
   end
 
   get '/tabi/:tabi_id/activities/:activity_id' do
     @page_id = 'activity'
     require_tabi
     require_activity
+
+    unless @activity.has_any_detail?
+      redirect to @activity.edit_path
+    end
+
     @back_to = @tabi.path
 
     erb :activity
@@ -139,7 +145,12 @@ class OtomoApp < Sinatra::Base
     @page_id = 'activity_edit'
     require_tabi
     require_activity
-    @back_to = @activity.path
+
+    if @activity.has_any_detail?
+      @back_to = @activity.path
+    else
+      @back_to = @tabi.path
+    end
 
     erb :activity_edit
   end
