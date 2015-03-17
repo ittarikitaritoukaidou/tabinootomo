@@ -180,19 +180,43 @@ header {
   margin: 0 auto;
   li {
     display: block;
-    border-bottom: 2px solid $border;
+    position: relative;
+    &:nth-child(n+2):before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 2px;
+      height: 20px;
+      background: #e5d6d1;
+      top: -10px;
+      left: 8px;
+    }
+    &:last-child {
+      border-bottom: 1px solid #e5d6d1;
+    }
   }
 }
 .activity-list-link {
   display: block;
-  font-size: 120%;
+  font-size: 110%;
   padding: 12px 2px;
-  color: $list-link;
   background: url("/images/arrow-right.svg") no-repeat right center;
   &:hover {
     color: lighten($list-link, 15%);
   }
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: $primary;
+    margin-right: 10px;
+
+    border: 2px solid #e5d6d1;
+    @include border-radius(7px);
+  }
 }
+
 .activity-list-empty {
   padding: 15px 0 0 0;
   text-align: center;
