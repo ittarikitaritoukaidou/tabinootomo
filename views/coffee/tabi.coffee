@@ -186,6 +186,7 @@ Tabi =
         return unless location
 
         $map.show()
+        google.maps.event.trigger(map, 'resize')
         map.setCenter location
         map.setZoom 14
 
