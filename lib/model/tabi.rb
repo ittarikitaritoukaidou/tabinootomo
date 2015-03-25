@@ -39,10 +39,11 @@ class Tabi
     }.compact
   end
 
-  def append_activity(title)
+  def append_activity(title, location)
     a = Activity.new({
         tabi_id: id,
         title: title,
+        location: location,
       })
     a.save
     activity_ids << a.id

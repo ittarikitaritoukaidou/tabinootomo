@@ -122,7 +122,7 @@ class OtomoApp < Sinatra::Base
 
   post '/tabi/:tabi_id/activities' do
     require_tabi
-    activity = @tabi.append_activity params[:title]
+    activity = @tabi.append_activity params[:title], params[:location]
 
     redirect to activity.edit_path
   end
