@@ -103,11 +103,35 @@ Tabi =
 
       if locations.length > 1
         map.fitBounds bounds
-      else
+      else if locations.length > 0
         map.setCenter(locations[0].center)
         map.setZoom(14)
+      else
+        kyoto = Tabi.Map.latLngFromString('40,135.5')
+        map.setCenter(kyoto)
+        map.setZoom(4)
+        google.maps.event.trigger(map, 'resize')
 
       map
+
+    # 見つかったら，locationを返す
+    searchLocation: (map, text) ->
+      found = $.Deferred()
+      placeService = new google.maps.places.PlacesService(map)
+      query =
+        # location: map.getCenter()
+        # radius: 10*1000
+        query: text
+
+      placeService.textSearch query, (res) ->
+        console.log res
+        location = res[0]?.geometry?.location
+        if location
+          found.resolve location
+        else
+          found.reject()
+
+      found.promise()
 
   Handlers:
     index: ->
@@ -118,7 +142,6 @@ Tabi =
 
       show_map = ->
         $map_container = $('.js-map')
-        return unless $map_container[0]
         locations = []
         $('.js-activity').each ->
           l = $(this).attr('data-location')
@@ -131,6 +154,11 @@ Tabi =
               title: title
               url: url
         map = Tabi.Map.mapFromLocations($('.js-map'), locations)
+
+        setTimeout ->
+          Tabi.Map.searchLocation(map, '金閣寺').done (location) ->
+            console.log location.toUrlValue()
+        , 1000
 
       show_map()
 
