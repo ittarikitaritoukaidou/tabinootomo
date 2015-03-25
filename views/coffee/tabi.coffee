@@ -124,7 +124,6 @@ Tabi =
         query: text
 
       placeService.textSearch query, (res) ->
-        console.log res
         location = res[0]?.geometry?.location
         if location
           found.resolve location
@@ -153,14 +152,31 @@ Tabi =
               center: l
               title: title
               url: url
-        map = Tabi.Map.mapFromLocations($('.js-map'), locations)
+        Tabi.Map.mapFromLocations($('.js-map'), locations)
 
-        setTimeout ->
-          Tabi.Map.searchLocation(map, '金閣寺').done (location) ->
-            console.log location.toUrlValue()
-        , 1000
+      map = show_map()
 
-      show_map()
+      submit_by_values = (title, location) ->
+        $form = $('.js-hidden-append-new-activity-form')
+        $form.find('input[name="title"]').val(title)
+        $form.find('input[name="location"]').val(location)
+        $form[0].submit()
+
+      $form = $('.js-append-new-activity-form')
+      $submit = $form.find('input[type="submit"]')
+      $form.on 'submit', ->
+        $submit.attr('disabled', true)
+        $form.find('input[type="submit"]').attr('disabled', true)
+        title = $form.find('input[name="title"]').val()
+
+        Tabi.Map.searchLocation(map, title).done (location) ->
+          submit_by_values(title, location.toUrlValue())
+        .fail ->
+          submit_by_values(title, null)
+        .always ->
+          $submit.attr('disabled', false)
+
+        false
 
     tabi_edit: ->
       $('ul.js-sortable').sortable
