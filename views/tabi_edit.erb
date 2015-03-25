@@ -12,7 +12,13 @@
     <h3 class="item-title">アクティビティを並び替え</h3>
     <ul class="sortable js-sortable rearrange-activity">
       <% @tabi.activities.each{|activity| %>
-        <li data-activity-id="<%= activity.id %>">
+      <li
+         class="js-activity"
+         data-activity-id="<%= activity.id %>"
+         <% if activity.has_location? %>data-location="<%= activity.location %>"<% end %>
+         data-title="<%= activity.title %>"
+         data-url="<%= @tabi.activity_path(activity) %>"
+         >
           <%= activity.title %>
           <i class="fa fa-bars handle js-handle"></i>
           <input type="hidden" name="activity_id[]" value="<%= activity.id %>"/>
@@ -25,6 +31,8 @@
     </div>
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
   </form>
+
+  <div class="js-map" style="width: 100%; height: 230px"></div>
 
   <form method="POST" action="<%= @tabi.delete_path %>" onsubmit="return confirm('この旅を削除しますか？\n一度削除した旅は取り消せません')">
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />

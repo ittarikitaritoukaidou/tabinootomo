@@ -20,6 +20,11 @@ Tabi =
       center_string = str.split(',')
       return unless center_string.length == 2
       new google.maps.LatLng(center_string[0], center_string[1])
+
+    showMap: ->
+      $map_container = $('.js-map')
+      Tabi.Map.mapFromLocations($map_container, Tabi.Map.collectLocations())
+
     mapFromCenter: ($map, center) ->
       options =
         center: center
@@ -42,6 +47,20 @@ Tabi =
       marker.setPosition center
 
       map
+
+    collectLocations: ->
+      locations = []
+      $('.js-activity').each ->
+        l = $(this).attr('data-location')
+        if l
+          l = Tabi.Map.latLngFromString(l)
+          title = $(this).attr('data-title')
+          url = $(this).attr('data-url')
+          locations.push
+            center: l
+            title: title
+            url: url
+      locations
 
     mapFromLocations: ($map, locations) ->
       options =
@@ -139,22 +158,7 @@ Tabi =
     tabi: ->
       Tabi.Map.destroyPOI()
 
-      show_map = ->
-        $map_container = $('.js-map')
-        locations = []
-        $('.js-activity').each ->
-          l = $(this).attr('data-location')
-          if l
-            l = Tabi.Map.latLngFromString(l)
-            title = $(this).attr('data-title')
-            url = $(this).attr('data-url')
-            locations.push
-              center: l
-              title: title
-              url: url
-        Tabi.Map.mapFromLocations($('.js-map'), locations)
-
-      map = show_map()
+      map = Tabi.Map.showMap()
 
       submit_by_values = (title, location) ->
         $form = $('.js-hidden-append-new-activity-form')
@@ -179,9 +183,13 @@ Tabi =
         false
 
     tabi_edit: ->
+      Tabi.Map.showMap()
+
       $('ul.js-sortable').sortable
         axis: 'y'
         handle: '.js-handle'
+        update: ->
+          Tabi.Map.showMap()
 
     activity: ->
       Tabi.Map.destroyPOI()
