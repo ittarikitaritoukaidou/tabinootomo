@@ -34,9 +34,15 @@ a {
     color: lighten($link, 10%);
   }
 }
+p {
+  margin: 0;
+}
 input, input[type="search"], textarea {
   -webkit-appearance: none;
   box-sizing: border-box;
+}
+.align-center {
+  text-align: center;
 }
 .container {
   max-width: 400px;
@@ -123,8 +129,22 @@ header {
     height: 36px;
   }
 }
+.main-image {
+  width: 320px;
+  height: 200px;
+  background: url("/images/main-image.png") no-repeat center top;
+  background-size: 320px 212px;
+}
 .description {
+  margin: 0;
+  background: #fff;
+  padding: 8px;
+  margin: 15px 10px;
+  display: inline-block;
+}
+.read-more {
   text-align: center;
+  margin: 0 0 20px 0;
 }
 .register-form {
 }
@@ -202,7 +222,7 @@ header {
 .activity-list-link {
   display: block;
   font-size: 110%;
-  padding: 12px 2px;
+  padding: 12px 12px 12px 2px;
   background: url("/images/arrow-right.svg") no-repeat right center;
   &:before {
     content: "";
