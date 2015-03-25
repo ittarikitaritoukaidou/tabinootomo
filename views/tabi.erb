@@ -40,12 +40,10 @@
     </form>
   </div>
 
-  <%- if @tabi.has_any_location? -%>
-    <div class="js-map" style="width: 100%; height: 230px"></div>
-  <%- else -%>
-    <%- unless @tabi.activities.empty? -%>
-      <div>行き先を編集して，位置情報を追加すると，ここにゎ地図が出るょ</div>
-    <%- end -%>
+  <div class="js-map" style="width: 100%; height: 230px"></div>
+
+  <%- if @tabi.activities.empty? -%>
+    <div>行き先を編集して，位置情報を追加すると，ここにゎ地図が出るょ</div>
   <%- end -%>
 
   <div class="share">
