@@ -34,6 +34,7 @@ class OtomoApp < Sinatra::Base
       begin
         @tabi = Tabi.find(params[:tabi_id])
         @title = @tabi.title
+        @description = @tabi.memo
       rescue
         redirect to '/'
       end
@@ -57,6 +58,7 @@ class OtomoApp < Sinatra::Base
         raise "not match" unless @tabi.has_activity?(@activity)
 
         @title = @activity.title
+        @description = @activity.memo
       rescue
         redirect to @tabi ? @tabi.path : '/'
       end
