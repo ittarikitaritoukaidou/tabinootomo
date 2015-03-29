@@ -4,29 +4,30 @@
   </p>
 </div>
 <div class="contents">
-  <p>「旅のお供」は、旅のしおりを作れるサービスです。</p>
-
-<p class="align-center">さっそく作ってみる</p>
+  <p></p>
   <form action="/tabi/create" method="post" class="register-form main-box">
     <div>
-      <input name="title" type="text" placeholder="例：スカイツリーが見たい！" class="register-placeholder" required />
+      <p class="align-center">旅のお供は、旅のしおりを<br>簡単に共有することができる<br>旅行を楽しむためのサービスです。</p>
+      <p class="align-center">この旅の名前を決めて、<br>さっそくしおりを作ってみよう！</p>
+      <input name="title" type="text" placeholder="例：スカイツリーを巡る旅！" class="register-placeholder" required />
     </div>
     <div>
       <input type="submit" value="しおりを作成する！" class="primary-btn primary-btn-index"/>
     </div>
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
   </form>
-
-  <p>行きたい場所を入れるだけで、しおりの完成です。<br>
-    できたしおりは、LINEで友達に送れます。<br>
-    下調べのための最高のソリューション。<br>
-    せっかくの旅行なんだから、最高の旅行にしたい。<br>
-    あとは、楽しむだけ。これでもう、旅先でバスの乗り換えを調べる必要はありません。</p>
-  <p class="read-more"><a href="">» 使い方を詳しく見る </a></p>
-  <p class="align-center">まずはこの旅の名前を決めよう！</p>
-  <form action="/tabi/create" method="post" class="register-form main-box">
+  <h3>旅のお供の使い方</h3>
+  <p class="step">step1</p>
+  <p>旅のタイトルを決めましょう</p>
+  <p class="step">step2</p>
+  <p>行きたい場所をどんどん挙げていきましょう。地図を入れて並び替えると便利に使えます。</p>
+  <p class="step">step3</p>
+  <p>できたしおりはみんなで共有！共有した人となら誰でも編集できるよ！</p>
+  <p class="step">当日</p>
+  <p>あとは旅のお供を見ながら回るだけ！旅先で地図や行き方を調べる必要はありません！</p>
+    <form action="/tabi/create" method="post" class="register-form main-box">
     <div>
-      <input name="title" type="text" placeholder="例：スカイツリーが見たい！" class="register-placeholder" required />
+      <input name="title" type="text" placeholder="例：北海道グルメの旅！" class="register-placeholder" required />
     </div>
     <div>
       <input type="submit" value="しおりを作成する！" class="primary-btn primary-btn-index"/>
