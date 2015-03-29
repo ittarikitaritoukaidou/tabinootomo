@@ -12,6 +12,8 @@ use Rack::Protection::FormToken
 
 use Rack::Flash
 
+use Rack::Deflater
+
 require './otomo'
 run OtomoApp
 
