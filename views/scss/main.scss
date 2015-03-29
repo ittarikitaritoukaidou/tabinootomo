@@ -93,7 +93,6 @@ input, input[type="search"], textarea {
   @include border-radius(3px);
 }
 
-
 // header
 header {
   max-width: 400px;
@@ -388,14 +387,17 @@ body.dragging, body.dragging * {
   @include sub-text-link;
 }
 
-
+// social btn
 #buttons {
-    margin-top: 10px;
-    min-height: 20px;
-    margin-bottom: 10px;
+  margin:10px 0 0 0;
+  padding: 0 0 0 12px;
+  min-height: 20px;
 
-    .button {
-        float: left;
-        margin-right: 10px;
-    }
+  .button {
+    float: left;
+    margin: 0 3px;
+  }
+  .tweet-btn {
+    width: 82px;
+  }
 }
