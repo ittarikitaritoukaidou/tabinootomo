@@ -12,6 +12,10 @@ class OtomoApp < Sinatra::Base
     also_reload 'lib/*.rb'
   end
 
+  configure :production do
+    require 'newrelic_rpm'
+  end
+
   configure do
     set :erb, :escape_html => true
     set :scss, {:style => :compact, :debug_info => false}
