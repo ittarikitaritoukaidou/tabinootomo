@@ -184,10 +184,12 @@ class OtomoApp < Sinatra::Base
   # -----
 
   get '/style' do
+    expires 600, :public, :must_revalidate
     scss :'scss/main', Compass.sass_engine_options
   end
 
   get '/js' do
+    expires 600, :public, :must_revalidate
     coffee :'coffee/tabi'
   end
 end
