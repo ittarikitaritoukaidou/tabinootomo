@@ -9,6 +9,10 @@ class OtomoApp < Sinatra::Base
 
   STATIC_EXPIRES = 3600*24*365
 
+  before do
+    redirect to('/').sub(/https?/i, 'http'), 301 if request.scheme == 'https' && ENV['RACK_ENV'] == 'production'
+  end
+
   configure :development do
     register Sinatra::Reloader
     also_reload 'lib/*.rb'
