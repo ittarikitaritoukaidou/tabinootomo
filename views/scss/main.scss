@@ -66,7 +66,7 @@ input, input[type="search"], textarea {
 .secondary-btn {
   background: #86b7c4;
   color: #fff;
-  padding: 4px 6px;
+  padding: 6px 12px;
   font-size: 90%;
   margin: 0 0 5px 0;
   display: inline-block;
@@ -209,7 +209,7 @@ header {
 }
 .edit-btn {
   text-align: right;
-  font-size: 80%;
+  font-size: 85%;
   color: $link;
   display: block;
   i {
@@ -318,6 +318,12 @@ header {
 }
 .activity-map {
   margin: 0 0 10px 0;
+}
+.view-mapapp {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
 }
 
 
