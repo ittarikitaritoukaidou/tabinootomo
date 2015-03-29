@@ -381,3 +381,15 @@ body.dragging, body.dragging * {
   padding: 0;
   @include sub-text-link;
 }
+
+
+#buttons {
+    margin-top: 10px;
+    min-height: 20px;
+    margin-bottom: 10px;
+
+    .button {
+        float: left;
+        margin-right: 10px;
+    }
+}

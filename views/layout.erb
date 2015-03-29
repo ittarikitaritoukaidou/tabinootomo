@@ -15,6 +15,15 @@
 
   </head>
   <body class="page-<%= @page_id %>" data-page-id="<%= @page_id %>">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=200080966784656&version=v2.3";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <header>
       <h1 class="title"><a href="/">
         <img src="/images/logo.svg" alt="旅のお供">
@@ -27,7 +36,10 @@
       <%== yield %>
     </div>
     <footer>
-      <small>©行ったり来たり東海道</small>
+      <div>
+        <small>©行ったり来たり東海道</small>
+      </div>
+      <div class="fb-like" data-href="https://tabinootomo.herokuapp.com/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     </footer>
 
     <script type="text/javascript" src="/js/vendors"></script>
