@@ -25,31 +25,31 @@
   <p></p>
   <form action="/tabi/create" method="post" class="register-form main-box">
     <div>
-      <p class="align-center">旅のお供は、旅のしおりを<br>簡単に共有することができる<br>旅行を楽しむためのサービスです。</p>
-      <p class="align-center">この旅の名前を決めて、<br>さっそくしおりを作ってみよう！</p>
-      <input name="title" type="text" placeholder="例：スカイツリーを巡る旅！" class="register-placeholder" required />
+      <p class="align-center">「旅のお供」は旅のしおりを<br>友達と共有できるサービスです</p>
+      <p class="align-center">この旅の名前を決めて<br>さっそくしおりを作ってみよう！</p>
+      <input name="title" type="text" placeholder="例：スカイツリーを巡る旅" class="register-placeholder" required />
     </div>
     <div>
-      <input type="submit" value="しおりを作成する！" class="primary-btn primary-btn-index"/>
+      <input type="submit" value="しおりを作る" class="primary-btn primary-btn-index"/>
     </div>
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
   </form>
-  <h3 class="how-to-use">旅のお供の使い方</h3>
+  <h3 class="how-to-use">「旅のお供」の使い方</h3>
   <p class="step">step1</p>
   <p class="step-text">旅のタイトルを決めましょう。</p>
   <p class="step">step2</p>
   <p class="step-text">行きたい場所を挙げていきましょう。地図を入れたり、行きたい順番に並び替えると便利に使えます。</p>
   <p class="step">step3</p>
-  <p class="step-text">できたしおりはみんなに送ろう！共有した人となら誰でも編集することができます。</p>
+  <p class="step-text">できたしおりはみんなに送りましょう。共有した人となら誰でも編集することができます。</p>
   <p class="step">当日</p>
   <p class="step-text">あとは旅のお供を見ながら回るだけ！旅先で地図や詳細を調べる必要はありません！</p>
     <form action="/tabi/create" method="post" class="register-form main-box">
     <p class="align-center">さあ今すぐ作ってみよう！</p>
     <div>
-      <input name="title" type="text" placeholder="例：北海道グルメの旅！" class="register-placeholder" required />
+      <input name="title" type="text" placeholder="例：北海道グルメの旅" class="register-placeholder" required />
     </div>
     <div>
-      <input type="submit" value="しおりを作成する！" class="primary-btn primary-btn-index"/>
+      <input type="submit" value="しおりを作る" class="primary-btn primary-btn-index"/>
     </div>
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
   </form>
