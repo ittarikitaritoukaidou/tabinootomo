@@ -9,11 +9,10 @@
     <meta property="og:title" content="<%- if @title -%><%= @title %> - 旅のお供<%- else -%>旅のお供<%- end -%>" />
     <meta property="og:description" content="<%= @description || '「旅のお供」は旅のしおりを作って、友達と共有できるサービスです。' %>" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tabinootomo.herokuapp.com" />
-    <meta property="og:image" content="/images/ogimage.png" />
+    <meta property="og:image" content="<%= to '/images/ogimage.png' %> />
     <meta property="og:site_name" content="" />
 
-    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="shortcut icon" href="<%= to '/images/favicon.png' %>">
     <title>
       <%- if @title -%>
         <%= @title %> - 旅のお供
