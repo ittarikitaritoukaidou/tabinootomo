@@ -7,7 +7,7 @@ Mongoid.load!('mongoid.yaml')
 class OtomoApp < Sinatra::Base
   helpers Sinatra::JSON
 
-  STATIC_EXPIRES = 3600*24
+  STATIC_EXPIRES = 3600*24*365
 
   configure :development do
     register Sinatra::Reloader
