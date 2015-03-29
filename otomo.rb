@@ -7,6 +7,8 @@ Mongoid.load!('mongoid.yaml')
 class OtomoApp < Sinatra::Base
   helpers Sinatra::JSON
 
+  STATIC_EXPIRES = 600
+
   configure :development do
     register Sinatra::Reloader
     also_reload 'lib/*.rb'
@@ -19,6 +21,8 @@ class OtomoApp < Sinatra::Base
   configure do
     set :erb, :escape_html => true
     set :scss, {:style => :compact, :debug_info => false}
+
+    set :static_cache_control, [:public, :max_age => STATIC_EXPIRES]
   end
 
   helpers do
@@ -184,12 +188,12 @@ class OtomoApp < Sinatra::Base
   # -----
 
   get '/style' do
-    expires 600, :public, :must_revalidate
+    expires STATIC_EXPIRES, :public, :must_revalidate
     scss :'scss/main', Compass.sass_engine_options
   end
 
   get '/js' do
-    expires 600, :public, :must_revalidate
+    expires STATIC_EXPIRES, :public, :must_revalidate
     coffee :'coffee/tabi'
   end
 end
