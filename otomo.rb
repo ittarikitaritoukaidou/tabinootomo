@@ -192,6 +192,24 @@ class OtomoApp < Sinatra::Base
     scss :'scss/main', Compass.sass_engine_options
   end
 
+  get '/js/vendors' do
+    expires STATIC_EXPIRES, :public, :must_revalidate
+    source = %w(
+      jquery/dist/jquery.min.js
+      underscore/underscore-min.js
+      jquery-ui/ui/core.js
+      jquery-ui/ui/widget.js
+      jquery-ui/ui/mouse.js
+      jquery-ui/ui/sortable.js
+      jqueryui-touch-punch/jquery.ui.touch-punch.min.js
+    ).map{|path|
+      open('public/js/vendor/' + path).read
+    }.join("\n\n")
+
+    content_type 'application/javascript'
+    source
+  end
+
   get '/js' do
     expires STATIC_EXPIRES, :public, :must_revalidate
     coffee :'coffee/tabi'
