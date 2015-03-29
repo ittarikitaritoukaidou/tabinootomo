@@ -173,7 +173,7 @@ class OtomoApp < Sinatra::Base
 
     @activity.save
 
-    redirect to @activity.path
+    redirect to @tabi.path
   end
 
   post '/tabi/:tabi_id/activities/:activity_id/delete' do
