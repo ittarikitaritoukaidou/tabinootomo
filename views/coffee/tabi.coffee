@@ -182,6 +182,12 @@ Tabi =
 
         false
 
+      setup_select = ->
+        $('.js-copy-url').on 'click', ->
+          @setSelectionRange(0, 9999)
+
+      setup_select()
+
     tabi_edit: ->
       Tabi.Map.showMap()
 
