@@ -1,8 +1,5 @@
 <h2 class="activity-title"><a href="<%= to @tabi.path %>"><%= @tabi.title %></a> &gt; <span class="current-activity"><%= @activity.title %></span></h2>
 <div class="contents">
-  <div class="edit-btn">
-    <a href="<%= @activity.edit_path %>"><i class="fa fa-pencil"></i>編集</a>
-  </div>
   <%- if @activity.has_memo? -%>
   <p class="memo"><%== rich_text(@activity.memo) %></p>
   <%- end -%>
@@ -10,7 +7,10 @@
   <div>
     <a href="http://maps.google.com/maps?q=<%= @activity.location %>" target="_blank" class="secondary-btn"><i class="fa fa-map-marker"></i>地図アプリで見る</a>
   </div>
-<div class="js-map" data-location="<%= @activity.location %>" style="width: 100%; height: 230px"></div>
+  <div class="js-map activity-map" data-location="<%= @activity.location %>" style="width: 100%; height: 230px"></div>
 <%- end -%>
+  <div class="edit-btn">
+    <a href="<%= @activity.edit_path %>"><i class="fa fa-pencil"></i>この行き先を編集する</a>
+  </div>
 
 </div>

@@ -5,9 +5,6 @@
 <%- end -%>
 
 <div class="contents">
-  <div class="edit-btn">
-    <a href="<%= @tabi.edit_path %>"><i class="fa fa-pencil"></i>編集・並び替え</a>
-  </div>
   <div class="main-box">
     <ul class="activity-list">
       <% @tabi.activities.each{|activity| %>
@@ -43,12 +40,15 @@
       <input name="location" type="hidden" >
       <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
     </form>
+    <div class="edit-btn">
+      <a href="<%= @tabi.edit_path %>"><i class="fa fa-pencil"></i>編集・並び替え</a>
+    </div>
   </div>
 
   <div class="js-map" style="width: 100%; height: 230px"></div>
 
   <%- if @tabi.activities.empty? -%>
-    <div>行き先を編集して，位置情報を追加すると，ここにゎ地図が出るょ</div>
+    <div>行き先を編集して、位置情報を追加すると地図が表示されます！</div>
   <%- end -%>
 
   <div class="share">

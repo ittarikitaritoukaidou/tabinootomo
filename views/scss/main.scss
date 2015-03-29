@@ -75,6 +75,10 @@ input, input[type="search"], textarea {
   i {
     margin: 0 3px 0 0;
   }
+  &:hover {
+    color: #fff;
+    background: darken(#86b7c4, 10%);
+  }
 }
 .main-box {
   background: $main-bg;
@@ -192,12 +196,12 @@ header {
 }
 .tabi-title {
   background: $sub-bg;
-  margin-top: 0;
+  margin: 0;
   font-size: 120%;
   padding: 10px 15px;
 }
 .memo {
-  padding: 0 15px;
+  padding: 10px 0;
 }
 .item-title {
   margin: 1.3em 0 .5em 0;
@@ -206,7 +210,6 @@ header {
 .edit-btn {
   text-align: right;
   font-size: 80%;
-  margin: 10px 0;
   color: $link;
   display: block;
   i {
@@ -291,7 +294,7 @@ header {
 }
 .activity-title {
   background: $sub-bg;
-  margin-top: 0;
+  margin: 0;
   font-size: 110%;
   font-weight: normal;
   padding: 10px 15px;
@@ -312,6 +315,9 @@ header {
   font-size: 180%;
   width: 40px;
   height: 40px;
+}
+.activity-map {
+  margin: 0 0 10px 0;
 }
 
 

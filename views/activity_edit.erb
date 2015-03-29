@@ -6,7 +6,7 @@
       <input name="title" type="text" placeholder="例：水族館" required value="<%= @activity.title %>" class="main-input"/>
     </div>
     <h3 class="item-title">メモ</h3>
-    <textarea name="memo" placeholder="エイヒレの本体を見れます" class="main-input"><%= @activity.memo %></textarea>
+    <textarea name="memo" placeholder="例：休館日は月曜日、13:00〜イルカショー" class="main-input"><%= @activity.memo %></textarea>
     <input type="hidden" name="location" value="<%= @activity.location %>" class="js-location-input" />
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
   </form>
