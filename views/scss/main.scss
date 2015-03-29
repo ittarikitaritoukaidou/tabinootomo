@@ -168,6 +168,9 @@ header {
 .about-title {
   font-size: 110%;
 }
+.how-to-use {
+  text-align: center;
+}
 .step {
   display: inline-block;
   background: $link;
@@ -175,6 +178,10 @@ header {
   width: 60px;
   padding: 3px 0;
   text-align: center;
+  margin: 0 0 .2em 0;
+}
+.step-text {
+  margin: 0 0 1em 0;
 }
 
 // tabi, activity

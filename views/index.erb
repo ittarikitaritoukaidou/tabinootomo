@@ -16,16 +16,17 @@
     </div>
     <input type="hidden" name="authenticity_token" value="<%= csrf_token %>" />
   </form>
-  <h3>旅のお供の使い方</h3>
+  <h3 class="how-to-use">旅のお供の使い方</h3>
   <p class="step">step1</p>
-  <p>旅のタイトルを決めましょう。</p>
+  <p class="step-text">旅のタイトルを決めましょう。</p>
   <p class="step">step2</p>
-  <p>行きたい場所をどんどん挙げていきましょう。地図を入れて並び替えると便利に使えます。</p>
+  <p class="step-text">行きたい場所を挙げていきましょう。地図を入れたり、行きたい順番に並び替えると便利に使えます。</p>
   <p class="step">step3</p>
-  <p>できたしおりはみんなで共有！共有した人となら誰でも編集できるよ！</p>
+  <p class="step-text">できたしおりはみんなに送ろう！共有した人となら誰でも編集することができます。</p>
   <p class="step">当日</p>
-  <p>あとは旅のお供を見ながら回るだけ！旅先で地図や行き方を調べる必要はありません！</p>
+  <p class="step-text">あとは旅のお供を見ながら回るだけ！旅先で地図や行き方を調べる必要はありません！</p>
     <form action="/tabi/create" method="post" class="register-form main-box">
+    <p class="align-center">さあ今すぐ作ってみよう！</p>
     <div>
       <input name="title" type="text" placeholder="例：北海道グルメの旅！" class="register-placeholder" required />
     </div>
