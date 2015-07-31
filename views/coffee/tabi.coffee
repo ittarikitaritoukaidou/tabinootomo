@@ -276,3 +276,5 @@ Tabi =
         set_location l if l
 $ ->
   Tabi.doHandler()
+  elapsedTime = new Date().getTime() - window.tabinootomoPageLoadStart
+  window.ga('send', 'timing', 'js', 'handlerDone', elapsedTime)
